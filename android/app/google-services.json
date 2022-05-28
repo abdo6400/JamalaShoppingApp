@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1033479739159",
+    "project_id": "amaproject-f7397",
+    "storage_bucket": "amaproject-f7397.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033479739159:android:5a99aaf67a2e9f20eb8952",
+        "android_client_info": {
+          "package_name": "com.example.jamalashoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033479739159-lbvu1tkfp5ajlqjpk3o4tlpn6vusgqrg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jamalashoppingapp",
+            "certificate_hash": "9f4679b0c9e48a997b653a112bd53c6da2b57ebe"
+          }
+        },
+        {
+          "client_id": "1033479739159-c487epv78hhuhu3urlef2c31ujiodnmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALZckoHCkoWqHLY4RVlSaK3Yd0wRmKTRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033479739159-c487epv78hhuhu3urlef2c31ujiodnmf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

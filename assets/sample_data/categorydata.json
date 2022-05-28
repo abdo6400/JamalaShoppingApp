@@ -1,0 +1,366 @@
+[
+  {
+    "id": 1,
+    "name": "منظفات",
+    "image": "https://cdn.infodubled.dz/wp-content/uploads/2018/02/mon.png",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 100
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 10
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 50
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "بقالة",
+    "image": "https://small-projects.org/wp-content/uploads/2016/02/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%85%D8%B1%D8%A8%D8%AD.jpg",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 70
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 20
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 25
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ورقيات",
+    "image": "https://e7.pngegg.com/pngimages/561/394/png-clipart-household-paper-product-toalet-household-paper-product-paper.png",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 7
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 5
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "حبوب",
+    "image": "https://cdn.altibbi.com/cdn/cache/1000x500/image/2020/03/06/0a48a36c83de12a3713905c5a20b7caa.png.webp",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 4
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 80
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "مشروبات",
+    "image": "https://annabaa.org/aarticles/fileM/23/569f4de0b90d4.jpg",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 1
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 1
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 5
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "مستهلكات وبطاريات",
+    "image": "https://www.ubuy.com.bh/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFOb1l4ZGxIekwuX0FDX1NMMTIwMF8uanBn.jpg",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 70
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 95
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "منظفات",
+    "image": "https://cdn.infodubled.dz/wp-content/uploads/2018/02/mon.png",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 100
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 10
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 50
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "بقالة",
+    "image": "https://small-projects.org/wp-content/uploads/2016/02/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%A8%D9%82%D8%A7%D9%84%D8%A9-%D9%85%D8%B1%D8%A8%D8%AD.jpg",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 70
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 20
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 25
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ورقيات",
+    "image": "https://e7.pngegg.com/pngimages/561/394/png-clipart-household-paper-product-toalet-household-paper-product-paper.png",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 7
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 5
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "حبوب",
+    "image": "https://cdn.altibbi.com/cdn/cache/1000x500/image/2020/03/06/0a48a36c83de12a3713905c5a20b7caa.png.webp",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 4
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 80
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "مشروبات",
+    "image": "https://annabaa.org/aarticles/fileM/23/569f4de0b90d4.jpg",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 1
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 1
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 5
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "مستهلكات وبطاريات",
+    "image": "https://www.ubuy.com.bh/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFOb1l4ZGxIekwuX0FDX1NMMTIwMF8uanBn.jpg",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 70
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 95
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "مستهلكات وبطاريات",
+    "image": "https://www.ubuy.com.bh/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzFOb1l4ZGxIekwuX0FDX1NMMTIwMF8uanBn.jpg",
+    "product": [
+      {
+        "id": 1,
+        "name": "Pril",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagewroh1516713054.jpg",
+        "price": 59,
+        "count": 70
+      },
+      {
+        "id": 2,
+        "name": "Persil",
+        "image": "http://4sat3amal.com/thumb/crop,1047x437,imagetava1516712917.png",
+        "price": 59,
+        "count": 95
+      },
+      {
+        "id": 3,
+        "name": "General",
+        "image": "https://turkeyana.com/wp-content/uploads/2017/03/airware_cleaning_hygiene_products_image.png",
+        "price": 59,
+        "count": 1
+      }
+    ]
+  }
+]
