@@ -35,7 +35,7 @@ class SectionThumbnail extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.02,
               ),
-              Container(
+              name==null?Container(): Container(
                 height: size.height * 0.05,
                 decoration: BoxDecoration(
                   color: Colors.white12,

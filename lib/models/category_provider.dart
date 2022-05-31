@@ -1,21 +1,28 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../models/models.dart';
 import '../services/api.dart';
 
 class CategoryProvider extends ChangeNotifier {
+  static Future<String> _loadAsset(String path) async {
+    return rootBundle.loadString(path);
+  }
   List<category> _CategoryList = [];
   Future<void> getCategories() async {
     List<category> _List = [];
-    var jsonobj = await Api_functions.getRequest(
-        "https://myjson.dit.upm.es/api/bins/3c65");
-    if (jsonobj != "404" || jsonobj != "500") {
-      jsonobj.forEach((val) {
+    Future.delayed(const Duration(milliseconds: 3000));
+    final dataString = await _loadAsset(
+      'assets/sample_data/categorydata.json',
+    );
+    var decodedata = jsonDecode(dataString);
+      decodedata.forEach((val) {
         category item = category.fromJson(val);
         _List.add(item);
       });
       _CategoryList = _List;
       notifyListeners();
-    }
   }
   List<category> get CategoryList => _CategoryList;
   List<Producttest> getProducts(int index) {

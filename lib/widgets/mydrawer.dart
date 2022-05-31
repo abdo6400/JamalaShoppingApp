@@ -94,41 +94,6 @@ class _MainDrawerState extends State<MainDrawer> {
                       SizedBox(
                         height: size.height * 0.08,
                         child: Card(
-                            child: ListTile(
-                                leading:  CircleAvatar(
-                                  backgroundImage:
-                                      AssetImage('assets/icons/cart.png'),
-                                radius: size.height * 0.021,),
-                                title: const Text("عربة التسوق",
-                                    style: TextStyle(color: Colors.black),),
-                                onTap: () {
-                                  Provider.of<PageStateManager>(context,
-                                          listen: false)
-                                      .setcart(true);
-                                  Navigator.of(context).pop();
-                                })),
-                      ),
-                      SizedBox(
-                        height: size.height * 0.08,
-                        child: Card(
-                          child: ListTile(
-                              leading:  CircleAvatar(
-                                backgroundImage:
-                                AssetImage('assets/icons/notification.png'),
-                                radius: size.height * 0.021,),
-                              title: const Text("الرسائل",
-                                  style: TextStyle(color: Colors.black)),
-                              onTap: () {
-                                Provider.of<PageStateManager>(context,
-                                    listen: false)
-                                    .setnotification(true);
-                                Navigator.of(context).pop();
-                              }),
-                        ),
-                      ),
-                      SizedBox(
-                        height: size.height * 0.08,
-                        child: Card(
                           child: ListTile(
                               leading:  CircleAvatar(
                                   backgroundImage:

@@ -39,7 +39,7 @@ class _ItemState extends State<Item> {
                       onPressed: () {},
                       icon: Icon(
                         Icons.favorite_border_outlined,
-                        color: Colors.blue,
+                        color: Colors.red,
                       ))),
             ),
             Container(
@@ -76,7 +76,7 @@ class _ItemState extends State<Item> {
                     children: [
                       CircleAvatar(
                         radius: size.height*0.021,
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.green,
                         child: IconButton(
                             onPressed: () {},
                             icon: Icon(
