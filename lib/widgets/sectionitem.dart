@@ -32,7 +32,7 @@ class SectionThumbnail extends StatelessWidget {
                 backgroundImage: NetworkImage(image_url!),
                 radius:  size.height*0.06,
               ),
-              SizedBox(
+              name==null? Container():SizedBox(
                 height: size.height * 0.02,
               ),
               name==null?Container(): Container(

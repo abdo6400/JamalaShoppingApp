@@ -5,8 +5,8 @@ class CategoryScreen extends StatefulWidget {
   static MaterialPage page() {
     return MaterialPage(
       child: const CategoryScreen(),
-      name: jamalapages.sectionPage,
-      key: ValueKey(jamalapages.sectionPage),
+      name: jamalapages.categoryPage,
+      key: ValueKey(jamalapages.categoryPage),
     );
   }
 

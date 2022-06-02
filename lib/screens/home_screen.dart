@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jamalashoppingapp/color.dart';
 import 'package:search_page/search_page.dart';
 import '../widgets/widgets.dart';
 import 'package:provider/provider.dart';
@@ -24,11 +23,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-  static int currentIndex = 0;
+  static int currentIndex = 3;
   final List Pages = [
-    MainScreen(),
+    Container(),
+    NotificationScreen(),
     CartScreen(),
-    NotificationScreen()
+    MainScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -39,11 +39,15 @@ class _HomeScreenState extends State<HomeScreen> {
      body: Pages[currentIndex],
       endDrawer: MainDrawer(),
       bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.blueAccent.shade700,
-          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.black,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Color(0xffffcc2a),
+          selectedFontSize: 15,
+          elevation: 2.0,
+          unselectedItemColor: Colors.white,
           currentIndex: currentIndex,
           onTap: (newIndex){
-            if(newIndex==3)
+            if(newIndex==0)
               _key.currentState!.openEndDrawer();
             else
               setState((){
@@ -51,10 +55,11 @@ class _HomeScreenState extends State<HomeScreen> {
               });
           },
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: 'Home',),
-            BottomNavigationBarItem(icon:Icon(Icons.shopping_cart_sharp),label: 'Cart'),
-            BottomNavigationBarItem(icon: Icon(Icons.notifications_none),label: 'notification'),
-            BottomNavigationBarItem(icon: Icon(Icons.dashboard_customize),label: 'More')
+            BottomNavigationBarItem(icon: Icon(Icons.dashboard_customize),label: 'المزيد'),
+            BottomNavigationBarItem(icon: Icon(Icons.notifications_none),label: 'الرسائل'),
+            BottomNavigationBarItem(icon:Icon(Icons.shopping_cart_sharp),label: 'العربه'),
+            BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: 'الرئيسة',),
+
       ]),
     ));
   }

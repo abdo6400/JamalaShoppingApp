@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:jamalashoppingapp/color.dart';
 import 'models/models.dart';
 import 'navigation/app_router.dart';
 import 'package:provider/provider.dart';
@@ -63,28 +62,6 @@ class _MyAppState extends State<MyApp> {
             routerDelegate: _appRouter!,
             backButtonDispatcher: RootBackButtonDispatcher(),
           ),
-        theme: ThemeData(
-            primarySwatch: MyColors.navy,
-            brightness: Brightness.light,
-            scaffoldBackgroundColor: const Color(0xfffcfcfc),
-            appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.white,
-                elevation: .2,
-                titleTextStyle:  TextStyle(fontFamily: Bold , color: Color(0xff323232)),
-                iconTheme: IconThemeData(color: MyColors.primaryColor)
-            )
-        ),
-        darkTheme: ThemeData(
-            brightness: Brightness.dark,
-            primarySwatch: MyColors.navy,
-            scaffoldBackgroundColor: const Color(0xfffcfcfc),
-            appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.white,
-                elevation: .2,
-                titleTextStyle:  TextStyle(fontFamily: Bold , color: Color(0xff323232)),
-                iconTheme: IconThemeData(color: MyColors.primaryColor)
-            )
-        ),
       ),
     );
   }

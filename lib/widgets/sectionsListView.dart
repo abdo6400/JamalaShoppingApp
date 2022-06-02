@@ -23,11 +23,10 @@ class SectionsListView extends StatelessWidget {
           else {
             List<category> categoryList = Provider.of<CategoryProvider>(context,listen: false).CategoryList;
             return  ListView.separated(
-
                   itemCount: 10,
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
-                  padding: EdgeInsets.all(15),
+                 padding: EdgeInsets.symmetric(horizontal: 10),
                   separatorBuilder: (ctx,index){
                     return SizedBox(width: 20,);
                   },

@@ -18,4 +18,5 @@ class jamalapages{
   static const String authotpPage = "/authotp";
   static const String succeedsignPage = "/succeedsign";
   static const String restpasswordPage = "/restpassword";
+  static const String categoryPage = "/categorypage";
 }
