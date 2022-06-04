@@ -22,14 +22,12 @@ class _ItemState extends State<Item> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Card(
+    return Material(
       elevation: 5.0,
-      shadowColor: Colors.blue,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
         width: size.width * 0.4,
-        decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
         child: Stack(
           children: [
             Positioned(
@@ -39,7 +37,6 @@ class _ItemState extends State<Item> {
                       onPressed: () {},
                       icon: Icon(
                         Icons.favorite_border_outlined,
-                        color: Colors.red,
                       ))),
             ),
             Container(
@@ -62,7 +59,7 @@ class _ItemState extends State<Item> {
                     SizedBox(
                       height: size.height * 0.01,
                     ),
-                    Text(widget.name!,style: TextStyle(fontSize: 14),),
+                    Text(widget.name!),
                   ],
                 )),
             Positioned(
@@ -76,19 +73,16 @@ class _ItemState extends State<Item> {
                     children: [
                       CircleAvatar(
                         radius: size.height*0.021,
-                        backgroundColor: Colors.green,
                         child: IconButton(
                             onPressed: () {},
                             icon: Icon(
                               Icons.add,
-                              color: Colors.white,
                               size: size.height*0.021,
                             )),
                       ),
                       Text(
                         widget.price!+" جنية ",
                         textDirection: TextDirection.rtl,
-                        style: TextStyle(fontSize: 16),
                       ),
                     ],
                   ),

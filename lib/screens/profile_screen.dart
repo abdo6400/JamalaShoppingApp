@@ -26,22 +26,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: Text(
           "الصفحة الشخصيه",
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        iconTheme: IconThemeData(color: Colors.black),
         elevation: 0,
         centerTitle: true,
         actions: [TextButton(onPressed: () {
           Provider.of<PageStateManager>(
               context, listen: false)
               .setedit(true);
-        }, child: Text("تعديل",style: TextStyle(color: Colors.green),))],
+        }, child: Text("تعديل"))],
       ),
-      backgroundColor: Colors.white,
       body: Container(
         width: size.width,
         padding: EdgeInsets.symmetric(vertical: size.height * 0.03,horizontal: size.width*0.03),
@@ -54,9 +49,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: size.height * 0.02),
             Text(
               "Abdo Amr",
-              style: const TextStyle(
-                fontSize: 21,
-              ),
             ),
             SizedBox(height: size.height * 0.01),
             Card(
@@ -65,15 +57,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   children: [
                     ListTile(
-                      title: Text("Email",style: TextStyle(color: Colors.blue),),
+                      title: Text("Email"),
                       subtitle: Text("abdo@gmail.com"),
                     ),
                     ListTile(
-                      title: Text("address",style: TextStyle(color: Colors.blue),),
+                      title: Text("address"),
                       subtitle: Text("abdo@gmail.com"),
                     ),
                     ListTile(
-                      title: Text("phone number",style: TextStyle(color: Colors.blue),),
+                      title: Text("phone number"),
                       subtitle: Text("0102524454"),
                     )
                   ],
@@ -95,9 +87,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       context, listen: false).LogOut();
                 },
                 child: Text("Logout"),
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.blue)),
               ),
             )
           ],

@@ -23,12 +23,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
           appBar: AppBar(
-            title: Text('العناصر المفضله',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18),),
+            title: Text('العناصر المفضله'),
             centerTitle: true,
-            backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Colors.black),
           ),
           body: FavoriteListView(),
         ));

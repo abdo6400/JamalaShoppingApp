@@ -26,7 +26,6 @@ class CategoryScreenState extends State<CategoryScreen>{
               height: size.height * 0.06,
               width: size.width,
               child: Card(
-                color: Colors.blueAccent.shade700,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: size.width*0.02),
                   child: Row(
@@ -34,14 +33,12 @@ class CategoryScreenState extends State<CategoryScreen>{
                     children: [
                       Text(
                         "الاقسام",
-                        style: TextStyle(fontSize: 18,color: Colors.white),
                       ),
                       SizedBox(
                         width: size.width * 0.03,
                       ),
                       Icon(
                         Icons.widgets_outlined,
-                        color: Colors.white,
                       ),
                     ],
                   ),

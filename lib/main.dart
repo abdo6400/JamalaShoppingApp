@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:jamalashoppingapp/jamala_theme.dart';
+import 'package:jamalashoppingapp/providers/sectionprovider.dart';
 import 'models/models.dart';
 import 'navigation/app_router.dart';
 import 'package:provider/provider.dart';
@@ -53,7 +55,7 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (_) => Auth()),
         ChangeNotifierProvider(create: (_) => Cart()),
         ChangeNotifierProvider(create: (_) => Orders()),
-        ChangeNotifierProvider(create: (_) => Products()),
+        ChangeNotifierProvider(create: (_) => SectionProvider()),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -62,6 +64,7 @@ class _MyAppState extends State<MyApp> {
             routerDelegate: _appRouter!,
             backButtonDispatcher: RootBackButtonDispatcher(),
           ),
+        theme: JamalaTheme.light(),
       ),
     );
   }

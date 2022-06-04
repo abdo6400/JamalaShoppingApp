@@ -20,7 +20,6 @@ class InformationScreen extends StatefulWidget {
 }
 
 class _InformationScreenState extends State<InformationScreen> {
-  final Color color = Colors.primaries[Random().nextInt(17)];
   final name = TextEditingController();
   final phone_number = TextEditingController();
   final city = TextEditingController();
@@ -34,10 +33,8 @@ class _InformationScreenState extends State<InformationScreen> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text('البيانات',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18),),
+        title: Text('البيانات'),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -136,7 +133,6 @@ class _InformationScreenState extends State<InformationScreen> {
                               decoration: BoxDecoration(
                                 borderRadius:
                                 BorderRadius.circular(20),
-                                color: Colors.white10,
                               ),
                               child: AlertDialog(
                                 content: Directionality(
@@ -156,7 +152,6 @@ class _InformationScreenState extends State<InformationScreen> {
                                               milliseconds: 1000
                                           ),
                                           content: Text("تم اضافة العنصر الي المفضلة",textAlign: TextAlign.center,),
-                                          backgroundColor: color,
                                           padding: EdgeInsets.symmetric(horizontal: size.width*0.2),
 
                                         ),
@@ -172,9 +167,6 @@ class _InformationScreenState extends State<InformationScreen> {
                                     },
                                     child: Text(
                                       "حسنا",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.green),
                                     ),
                                   ),
                                   TextButton(
@@ -183,21 +175,14 @@ class _InformationScreenState extends State<InformationScreen> {
                                     },
                                     child: Text(
                                       "لا",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.red),
                                     ),
                                   )
                                 ],
                               )));
                     },
                     child: Text("تاكيد الطلب"),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateColor.resolveWith((states) => Colors.green),
                     ),
                   ),
-                ),
                 Container(
                   width: size.width,
                   child: ElevatedButton(
@@ -205,10 +190,6 @@ class _InformationScreenState extends State<InformationScreen> {
                       Navigator.of(context).pop();
                     },
                     child: Text("الغاء الطلب"),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateColor.resolveWith((states) => Colors.red),
-                    ),
                   ),
                 ),
               ],

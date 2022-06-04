@@ -32,14 +32,8 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                 ? Text("")
                 : Text(
                     'تفاصيل الطلب',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
                   ),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: Provider.of<OrderStateManager>(context, listen: false).statcontent
           ? Container(

@@ -30,7 +30,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             body: ListView(
       children: [
         Card(
-          color: Colors.grey.shade200,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50),
@@ -96,7 +95,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.grey.shade50,
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -195,9 +193,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                   child: ElevatedButton(
                     onPressed: () {},
                     child: Text("add to cart"),
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.blue)),
                   ),
                 ),
                 SizedBox(
@@ -208,9 +203,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                   child: ElevatedButton(
                     onPressed: () {},
                     child: Icon(Icons.favorite_border),
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => Colors.blueGrey.shade100)),
                   ),
                 ),
               ],

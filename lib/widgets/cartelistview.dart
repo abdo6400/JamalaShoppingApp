@@ -5,17 +5,14 @@ import 'package:provider/provider.dart';
 import '../widgets/widgets.dart';
 class CartListView extends StatelessWidget {
    CartListView({Key? key}) : super(key: key);
-  final Color color = Colors.primaries[Random().nextInt(17)];
   void showbottomsheet(BuildContext context){
     final size = MediaQuery.of(context).size;
     showModalBottomSheet<void>(
-      barrierColor: Colors.white10,
       context: context,
       builder: (BuildContext context) {
         return Container(
           height: size.height*0.3,
           decoration: BoxDecoration(
-              color: Colors.blue,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20))
           ),
           padding: EdgeInsets.all(20),
@@ -24,24 +21,24 @@ class CartListView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("pricew of jdna",style: TextStyle(color: Colors.white),),
-                  Text("5055",style: TextStyle(color: Colors.white),),
+                  Text("pricew of jdna"),
+                  Text("5055"),
                 ],
               ),
               SizedBox(height: size.height*0.02,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("pricew of jdna",style: TextStyle(color: Colors.white),),
-                  Text("5055",style: TextStyle(color: Colors.white),),
+                  Text("pricew of jdna"),
+                  Text("5055"),
                 ],
               ),
               SizedBox(height: size.height*0.02,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("pricew of jdna",style: TextStyle(color: Colors.white),),
-                  Text("457",style: TextStyle(color: Colors.white),),
+                  Text("pricew of jdna"),
+                  Text("457"),
                 ],
               ),
               SizedBox(height: size.height*0.03,),
@@ -54,10 +51,6 @@ class CartListView extends StatelessWidget {
                   },
                   child: Text(
                     "تقدم بالطلب"
-                    ,style: TextStyle(color: Colors.black),
-                  ),
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateColor.resolveWith((states) => Colors.white)
                   ),
                 ),
               ),
@@ -96,15 +89,13 @@ class CartListView extends StatelessWidget {
              SizedBox(
                 width: size.width,
                 child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
-                  ),
+
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("الاستمرار",style: TextStyle(color: Colors.black,fontSize: 18),),
+                        Text("الاستمرار"),
                         SizedBox(width: size.width*0.1,),
-                        Icon(Icons.arrow_upward,color: Colors.black,),
+                        Icon(Icons.arrow_upward),
                       ],
                     ),
                     onPressed: (){

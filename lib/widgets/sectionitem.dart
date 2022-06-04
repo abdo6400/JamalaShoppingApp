@@ -30,12 +30,9 @@ class SectionThumbnail extends StatelessWidget {
             children: [
               CircleAvatar(
                 backgroundImage: NetworkImage(image_url!),
-                radius:  size.height*0.06,
+                radius:  size.height*0.05,
               ),
-              name==null? Container():SizedBox(
-                height: size.height * 0.02,
-              ),
-              name==null?Container(): Container(
+             Container(
                 height: size.height * 0.05,
                 decoration: BoxDecoration(
                   color: Colors.white12,

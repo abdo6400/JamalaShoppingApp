@@ -24,32 +24,29 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text('تواصل معانا',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18),textAlign: TextAlign.center,),
+            title: Text('تواصل معانا',textAlign: TextAlign.center,),
             centerTitle: true,
-            backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Colors.black),
           ),
           body:   Card(
                   margin: EdgeInsets.only(bottom: size.height*0.38,right: size.width*0.02,left: size.width*0.02,top: size.height*0.02),
                   elevation: 10.0,
-                  shadowColor: Colors.blueAccent,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ListTile(
-                        leading: Icon(Icons.mail_outline,color: Colors.blue,),
+                        leading: Icon(Icons.mail_outline),
                         title: Text("abdoamr@gmail.com"),
                       ),
                       ListTile(
-                        leading: Icon(Icons.phone,color: Colors.blue,),
+                        leading: Icon(Icons.phone),
                         title: Text("+2001069645711"),
                       ),
                       ListTile(
-                        leading: Icon(Icons.chat,color: Colors.blue,),
+                        leading: Icon(Icons.chat),
                         title: Text("abdoamr@gmail.com"),
                       ),
                       ListTile(
-                        leading: Icon(Icons.location_on,color: Colors.blue,),
+                        leading: Icon(Icons.location_on),
                         title: Text("20 jhsa uasu ygaya jhfjhfudufydgyfgdygfydgyfydfyd"),
                       )
                     ],

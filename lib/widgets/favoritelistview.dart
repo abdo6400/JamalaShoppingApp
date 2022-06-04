@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jamalashoppingapp/providers/datamodels/product.dart';
+import 'package:jamalashoppingapp/providers/sectionprovider.dart';
 import 'package:provider/provider.dart';
 
 import '../models/models.dart';
@@ -11,11 +13,11 @@ class FavoriteListView extends StatefulWidget {
 }
 
 class _FavoriteListViewState extends State<FavoriteListView> {
-  late List<Producttest> products;
+  late List<Product> products;
   @override
   void initState() {
     super.initState();
-    products = Provider.of<CategoryProvider>(context,listen: false).getbestproductsold();
+    products = Provider.of<SectionProvider>(context,listen: false).getbestproductsold();
   }
   @override
   Widget build(BuildContext context) {

@@ -50,7 +50,6 @@ class _OrderListViewState extends State<OrderListView> {
                 width: size.width,
                 child: Card(
                   margin: EdgeInsets.all(0),
-                  color: Colors.grey.shade100,
                   elevation: 2.0,
                   child: Row(
                     children: [

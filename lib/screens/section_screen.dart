@@ -23,12 +23,9 @@ class _SectionScreenState extends State<SectionScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
           appBar: AppBar(
-            title: Text('قسم',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18),),
+            title: Text('قسم'),
             centerTitle: true,
-            backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Colors.black),
             actions: [
               IconButton(
                   onPressed: () {

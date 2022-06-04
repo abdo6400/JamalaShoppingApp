@@ -39,12 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
      body: Pages[currentIndex],
       endDrawer: MainDrawer(),
       bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.black,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Color(0xffffcc2a),
           selectedFontSize: 15,
           elevation: 2.0,
-          unselectedItemColor: Colors.white,
           currentIndex: currentIndex,
           onTap: (newIndex){
             if(newIndex==0)

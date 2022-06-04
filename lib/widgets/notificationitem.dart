@@ -5,8 +5,6 @@ class NotificationItem extends StatelessWidget {
   final int? index;
 
   NotificationItem({Key? key, this.index}) : super(key: key);
-  final Color color = Colors.primaries[Random().nextInt(17)];
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -21,7 +19,6 @@ class NotificationItem extends StatelessWidget {
             builder: (ctx) => Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.white10,
               ),
               child: AlertDialog(
                 title: Text("Alert Dialog Box"),
@@ -33,7 +30,6 @@ class NotificationItem extends StatelessWidget {
                     },
                     child: Text(
                       "حسنا",
-                      style: TextStyle(fontSize: 12, color: color),
                     ),
                   ),
                 ],
@@ -43,7 +39,6 @@ class NotificationItem extends StatelessWidget {
         },
         child: Card(
           elevation: 5.0,
-          shadowColor: Colors.blue,
           margin: EdgeInsets.symmetric(vertical: size.height * 0.01),
           child: Padding(
             padding: const EdgeInsets.all(10),
@@ -53,7 +48,6 @@ class NotificationItem extends StatelessWidget {
                 Text("the request has accept"),
                 Icon(
                   Icons.notifications,
-                  color: color,
                   size: size.height * 0.04,
                 )
               ],

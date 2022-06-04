@@ -28,10 +28,8 @@ class _CartScreenState extends State<CartScreen> {
         child: Scaffold(
           backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('عربة التسوق',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18),),
+        title: Text('عربة التسوق'),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
         actions: [
           IconButton(
               onPressed: () {
@@ -66,21 +64,17 @@ class EmptyCartScreen extends StatelessWidget {
             const SizedBox(height: 8.0),
             const Text(
               'لا يوجد عناصر في السلة',
-              style: TextStyle(fontSize: 21.0),
             ),
             const SizedBox(height: 12.0),
             const Text(
               'اضغط علي الزر لتصفح الاقسام',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.green),
             ),
             MaterialButton(
-              textColor: Colors.white,
               child: const Text('تصفح الاقسام'),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              color: Colors.blue,
               onPressed: () {
                 Navigator.of(context).pop();
               },

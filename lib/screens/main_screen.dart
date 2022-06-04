@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jamalashoppingapp/providers/sectionprovider.dart';
 import '../constant.dart';
 import '../services/api.dart';
 import '../models/models.dart';
@@ -26,8 +27,6 @@ class _MainScreenState extends State<MainScreen> {
   int _currentPage = 0;
   List<String> images = [
     'assets/images/section.png',
-    'assets/images/section.png',
-    'assets/images/section.png'
   ];
 
   @override
@@ -54,40 +53,41 @@ class _MainScreenState extends State<MainScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   elevation: 2.0,
-        //   backgroundColor: Colors.transparent,
-        //   title: Text(
-        //     'JAMALA',
-        //     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-        //   ),
-        //   actions: [
-        //   ],
-        // ),
         body: Container(
           height: size.height,
           width: size.width,
           child: Column(
             children: [
               Container(
-                color: Colors.white,
                 width: size.width,
-                padding: EdgeInsets.symmetric(horizontal: size.width*0.05),
+                padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(text: "J",style: TextStyle(color: Colors.black,fontSize: 18)),
-                            TextSpan(text: "A",style: TextStyle(color: Color(0xffffcc2a),fontSize: 18)),
-                            TextSpan(text: "M",style: TextStyle(color: Colors.black,fontSize: 18)),
-                            TextSpan(text: "A",style: TextStyle(color: Color(0xffffcc2a),fontSize: 18)),
-                            TextSpan(text: "L",style: TextStyle(color: Colors.black,fontSize: 18)),
-                            TextSpan(text: "A",style: TextStyle(color: Color(0xffffcc2a),fontSize: 18)),
-                          ]
-                        )
-                    ),
+                        text: TextSpan(children: [
+                      TextSpan(
+                          text: "J",
+                          style: Theme.of(context).textTheme.bodyText1),
+                      TextSpan(
+                          text: "A",
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor, fontSize: 16)),
+                      TextSpan(
+                          text: "M",
+                          style: Theme.of(context).textTheme.bodyText1),
+                      TextSpan(
+                          text: "A",
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor, fontSize: 16)),
+                      TextSpan(
+                          text: "L",
+                          style:  Theme.of(context).textTheme.bodyText1),
+                      TextSpan(
+                          text: "A",
+                          style: TextStyle(
+                              color:Theme.of(context).primaryColor, fontSize: 16)),
+                    ])),
                     Row(
                       children: [
                         IconButton(
@@ -95,8 +95,9 @@ class _MainScreenState extends State<MainScreen> {
                               showSearch(
                                   context: context,
                                   delegate: SearchPage<Producttest>(
-                                      items: Provider.of<CategoryProvider>(context,
-                                          listen: false)
+                                      items: Provider.of<CategoryProvider>(
+                                              context,
+                                              listen: false)
                                           .getallproduct(),
                                       searchLabel: 'Search products',
                                       suggestion: Container(
@@ -114,66 +115,73 @@ class _MainScreenState extends State<MainScreen> {
                                         ),
                                       ),
                                       filter: (prod) => [
-                                        prod.name,
-                                        prod.id.toString(),
-                                      ],
+                                            prod.name,
+                                            prod.id.toString(),
+                                          ],
                                       builder: (prod) => Container(
-                                        decoration: BoxDecoration(color: Colors.white),
-                                        height: size.height,
-                                        width: size.width,
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: size.width * 0.01),
-                                        child: GridView.builder(
-                                            itemCount: 6,
-                                            padding: EdgeInsets.all(15),
-                                            gridDelegate:
-                                            SliverGridDelegateWithMaxCrossAxisExtent(
-                                              maxCrossAxisExtent: size.width * 0.42,
-                                              childAspectRatio: 2 / 3,
-                                              crossAxisSpacing: 15,
-                                              mainAxisSpacing: 15,
-                                            ),
-                                            itemBuilder: (ctx, index) {
-                                              return Item(
-                                                name: prod.name,
-                                                image_url: prod.image,
-                                                price: prod.price.toString(),
-                                              );
-                                            }),
-                                      )));
+                                            height: size.height,
+                                            width: size.width,
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: size.width * 0.01),
+                                            child: GridView.builder(
+                                                itemCount: images.length,
+                                                padding: EdgeInsets.all(15),
+                                                gridDelegate:
+                                                    SliverGridDelegateWithMaxCrossAxisExtent(
+                                                  maxCrossAxisExtent:
+                                                      size.width * 0.42,
+                                                  childAspectRatio: 2 / 3,
+                                                  crossAxisSpacing: 15,
+                                                  mainAxisSpacing: 15,
+                                                ),
+                                                itemBuilder: (ctx, index) {
+                                                  return Item(
+                                                    name: prod.name,
+                                                    image_url: prod.image,
+                                                    price:
+                                                        prod.price.toString(),
+                                                  );
+                                                }),
+                                          )));
                             },
-                            icon: Icon(Icons.search,color: Color.fromRGBO(146, 180, 236, 1))),
+                            icon: Icon(Icons.search)),
                         IconButton(
                             onPressed: () {
-                              Provider.of<PageStateManager>(context, listen: false)
+                              Provider.of<PageStateManager>(context,
+                                      listen: false)
                                   .setcart(true);
                             },
-                            icon: Icon(Icons.shopping_cart_outlined,color: Color.fromRGBO(146, 180, 236, 1),))
+                            icon: Icon(
+                              Icons.shopping_cart_outlined,
+                            ))
                       ],
                     )
                   ],
                 ),
               ),
               FutureBuilder(
-                  future: Provider.of<CategoryProvider>(context, listen: false)
+                  future: Provider.of<SectionProvider>(context, listen: false)
                       .getCategories(),
                   builder: (ctx, snp) {
                     if (snp.connectionState == ConnectionState.waiting) {
-                      return  const progressDialog(mssage: "Loading . . .");
+                      return const progressDialog(mssage: "Loading . . .");
                     } else {
                       return Container(
-                        height: size.height*0.8,
+                        height: size.height * 0.8,
                         width: size.width,
                         child: ListView(
                           children: [
                             Card(
+                              elevation: 2.0,
                               child: Text(
                                 "specicl offers",
-                                style: TextStyle(fontSize: 18,color: Colors.white),
                                 textAlign: TextAlign.center,
                               ),
-                              color: Color.fromRGBO(255, 230, 154, 1),
-                              margin: EdgeInsets.only(top: 0.0,left: 0.0,right: 0.0,bottom: size.height*0.01),
+                              margin: EdgeInsets.only(
+                                  top: 0.0,
+                                  left: 0.0,
+                                  right: 0.0,
+                                  bottom: size.height * 0.01),
                             ),
                             CarouselSlider(
                               options: CarouselOptions(
@@ -185,99 +193,94 @@ class _MainScreenState extends State<MainScreen> {
                                 autoPlayCurve: Curves.fastOutSlowIn,
                                 enableInfiniteScroll: true,
                                 autoPlayAnimationDuration:
-                                Duration(milliseconds: 400),
+                                    Duration(milliseconds: 400),
                               ),
                               items: images.map((sliderPhoto) {
                                 return Builder(builder: (BuildContext context) {
                                   return InkWell(
                                     onTap: () {
                                       Provider.of<PageStateManager>(context,
-                                          listen: false)
+                                              listen: false)
                                           .setitemdetial(true);
                                     },
                                     child: Card(
                                       elevation: 2.0,
                                       shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        side: BorderSide.lerp(BorderSide(color: Color.fromRGBO(146, 180, 236, 1)), BorderSide(color: Color.fromRGBO(146, 180, 236, 1)), 2.0)
-                                      ),
+                                          borderRadius:
+                                              BorderRadius.circular(10),),
                                       child: Container(
-                                        width: MediaQuery.of(context).size.width,
+                                        width:
+                                            MediaQuery.of(context).size.width,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage(
                                                   sliderPhoto.toString(),
                                                 ),
                                                 fit: BoxFit.fill),
-                                            borderRadius: BorderRadius.circular(10)),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                       ),
                                     ),
                                   );
                                 });
                               }).toList(),
                             ),
-                             Padding(
-                              padding: EdgeInsets.symmetric(horizontal: size.width*0.05) ,
-                               child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Categories",
-                                      style: TextStyle(fontSize: 16),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    TextButton(
-                                        onPressed: () {
-
-                                        },
-                                        child: Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Text(
-                                              "ViewAll",
-                                              style: TextStyle(
-                                                  fontSize: 16,
-                                                color:  Color.fromRGBO(146, 180, 236, 1),),
-                                            ),
-                                            Icon(
-                                              Icons.arrow_forward,
-                                              color:  Color.fromRGBO(146, 180, 236, 1),
-                                            ),
-                                          ],
-                                        )),
-                                  ],
-                                ),
-                             ),
-                            Container(
-                              height: size.height * 0.13,
-                              child: SectionsListView(),
-                            ),
-                            SizedBox(
-                              height: size.height*0.01,
-                            ),
                             Padding(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: size.width * 0.05),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: size.width * 0.05),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    "الاكثر مبيعا",
-                                    style: TextStyle(fontSize: 16),
+                                    "Categories",
+                                    textAlign: TextAlign.center,
                                   ),
-                                  SizedBox(
-                                    width: size.width * 0.03,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                    color: Color(0xffffcc2a),
-                                  ),
+                                  TextButton(
+                                      onPressed: () {},
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text(
+                                            "ViewAll",
+                                          ),
+                                          Icon(
+                                            Icons.arrow_forward,
+                                          ),
+                                        ],
+                                      )),
                                 ],
                               ),
                             ),
-                            SizedBox(
-                              height: size.height*0.02,
+                            Container(
+                              height: size.height * 0.15,
+                              child: SectionsListView(),
+                            ),
+                            Card(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: size.width * 0.05),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "الاكثر مبيعا",
+                                    ),
+                                    SizedBox(
+                                      width: size.width * 0.03,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                    ),
+                                  ],
+                                ),),
+                                margin: EdgeInsets.only(
+                                    top: 0.0,
+                                    left: 0.0,
+                                    right: 0.0,
+                                    bottom: size.height * 0.01),
+                              elevation: 2.0,
                             ),
                             ItemSection(),
                           ],

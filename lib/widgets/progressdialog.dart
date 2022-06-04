@@ -12,7 +12,6 @@ class progressDialog extends StatelessWidget {
     return  Container(
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Colors.white10,
           borderRadius: BorderRadius.circular(6.0),
         ),
         child:  Column(
@@ -32,8 +31,8 @@ class progressDialog extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height*0.05,
               ),
-              Text(mssage!,style: TextStyle(color: Colors.black,fontSize: 15.0),
-              ),
+              Text(mssage!
+              )
             ],
           ),
     );

@@ -26,10 +26,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: const Text('الرسائل',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18),),
+        title: const Text('الرسائل'),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
       ),
       body: const NotifiactionListView(),
     ));

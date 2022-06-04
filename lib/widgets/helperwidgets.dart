@@ -15,12 +15,10 @@ void snackBar(BuildContext context, String message, double size) {
 
 void showDailog(BuildContext context, String Message) {
   AlertDialog alert = AlertDialog(
-      backgroundColor: Colors.white,
       elevation: 2.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(35),
         side: BorderSide(
-          color: Colors.grey.shade50,
           width: 2
         )
       ),
@@ -31,12 +29,12 @@ void showDailog(BuildContext context, String Message) {
                   offset: Offset(1, 1),
                   blurRadius: 1,
                   spreadRadius: 1,
-                  color: Colors.blue),
+              ),
               BoxShadow(
                   offset: Offset(-4, -4),
                   blurRadius: 1,
                   spreadRadius: 2,
-                  color: Colors.white)
+                  )
             ]
         ),
         height: 200,
@@ -58,8 +56,6 @@ void showDailog(BuildContext context, String Message) {
             ),
              Text(
                   Message,
-                  style: TextStyle(color: Colors.grey.shade700, fontSize: 20,height: 2
-                  ),
                   textAlign: TextAlign.center,
                 ),
           ],
@@ -79,7 +75,6 @@ void showDailog1(BuildContext context, String Message) {
       builder: (ctx) => Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.white10,
           ),
           child: AlertDialog(
             content: Text("$Message"),

@@ -9,11 +9,9 @@ class OrderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Card(
-        color: Colors.white,
         margin: EdgeInsets.symmetric(
             horizontal: size.width * 0.04, vertical: size.height * 0.01),
         elevation: 5.0,
-        shadowColor: Colors.blue,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)
         ),
@@ -50,7 +48,7 @@ class OrderItem extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("states"),Text("ongoing",style: TextStyle(backgroundColor: Colors.blue,color: Colors.white),),
+                  Text("states"),Text("ongoing"),
                 ],
               ),
               SizedBox(height: size.height*0.02,),
@@ -73,14 +71,14 @@ class OrderItem extends StatelessWidget {
                         Provider.of<OrderStateManager>(context,listen: false).setstatcontent(false);
                         Provider.of<OrderStateManager>(context,listen: false).setOrderdetail(true);
                       },
-                      child: Text("عرض تفاصيل الطلب",style:TextStyle(color: Colors.blue,fontSize: 16,fontWeight: FontWeight.bold)),
+                      child: Text("عرض تفاصيل الطلب"),
                     ),
                     TextButton(
                       onPressed: (){
                         Provider.of<OrderStateManager>(context,listen: false).setstatcontent(true);
                         Provider.of<OrderStateManager>(context,listen: false).setOrderdetail(true);
                       },
-                      child: Text("تتبع الطلب",style:TextStyle(color: Colors.blue,fontSize: 16,fontWeight: FontWeight.bold)),
+                      child: Text("تتبع الطلب"),
                     )
                   ],
                 ),

@@ -14,8 +14,6 @@ class CartItem extends StatefulWidget {
 }
 
 class _CartItemState extends State<CartItem> {
-  final Color color = Colors.primaries[Random().nextInt(17)];
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -28,21 +26,19 @@ class _CartItemState extends State<CartItem> {
       background: Container(
         padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
         decoration: BoxDecoration(
-            color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+             borderRadius: BorderRadius.circular(20)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Icon(
               Icons.delete_forever,
               size: 50,
-              color: Colors.white,
             )
           ],
         ),
       ),
       child: Card(
         elevation: 5.0,
-        shadowColor: Colors.blue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
@@ -61,15 +57,12 @@ class _CartItemState extends State<CartItem> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text("علبة عصير",
-                    style: TextStyle(
-                        fontSize: 19.0, fontWeight: FontWeight.bold)),
+                  ),
                   SizedBox(
                     height: 2,
                   ),
                   Text("معلبات",
-                      style: TextStyle(
-                        fontSize: 14.0,
-                      )),
+                     ),
                   SizedBox(height: 10,),
                   Container(
                     padding: EdgeInsets.only(right: size.width * 0.02),
@@ -78,32 +71,28 @@ class _CartItemState extends State<CartItem> {
                       children: [
                         Text(
                         " 5.0 السعر ",
-                        style: TextStyle(fontSize: 16, color: Colors.blueAccent),
                       ),
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              color: Colors.blueAccent),
+                             ),
                           child: Row(
                             children: [
                               InkWell(
                                 onTap: () {},
                                 child: Icon(
                                   Icons.minimize,
-                                  color: Colors.white,
                                 ),
                               ),
                               SizedBox(width: size.width*0.01,),
                               Text(
                                 "1",
-                                style: TextStyle(fontSize: 14,color: Colors.white),
                               ),
                               SizedBox(width: size.width*0.01,),
                               InkWell(
                                 onTap: () {},
                                 child: Icon(
                                   Icons.add,
-                                  color: Colors.white,
                                 ),
                               ),
                             ],

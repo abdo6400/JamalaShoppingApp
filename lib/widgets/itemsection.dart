@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:jamalashoppingapp/providers/datamodels/product.dart';
+import 'package:jamalashoppingapp/providers/sectionprovider.dart';
 import 'package:provider/provider.dart';
 import '../models/category.dart';
 import '../models/category_provider.dart';
@@ -15,12 +17,11 @@ class ItemSection extends StatefulWidget {
 }
 
 class _ItemSectionState extends State<ItemSection> {
-  final Color color = Colors.primaries[Random().nextInt(17)];
-  late List<Producttest> products;
+  late List<Product> products;
   @override
   void initState() {
     super.initState();
-    products = Provider.of<CategoryProvider>(context,listen: false).getbestproductsold();
+    products = Provider.of<SectionProvider>(context,listen: false).getbestproductsold();
   }
   @override
   Widget build(BuildContext context) {

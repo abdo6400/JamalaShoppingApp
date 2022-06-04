@@ -26,7 +26,6 @@ class _SucceedSignScreenScreenState extends State<SucceedSignScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blueAccent,
         body: Container(
           height: size.height,
           width: size.width,
@@ -49,24 +48,22 @@ class _SucceedSignScreenScreenState extends State<SucceedSignScreen> {
                     child: Container(
                       width: size.width*0.5,
                       decoration: const BoxDecoration(
-                        color: Colors.blueAccent,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black,
-                            spreadRadius: 0.1,
-                            blurRadius: 5
-                          )
-                        ]
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //     spreadRadius: 0.1,
+                        //     blurRadius: 5
+                        //   )
+                        // ]
                       ),
                       child: Provider.of<AppStateManager>(context, listen: false)
                               .forgetscreen
                           ? Text(
                               "تم ارسال اميل بنجاح",
-                              style: TextStyle(fontSize: size.width*0.03,color: Colors.white),textAlign: TextAlign.center,
+                            textAlign: TextAlign.center,
                             )
                           : Text(
                               "تم التسجيل بنجاح",
-                          style: TextStyle(fontSize:size.width*0.03,color: Colors.white),textAlign: TextAlign.center,
+                          textAlign: TextAlign.center,
                             ),
                     ),
                   ),
@@ -77,9 +74,6 @@ class _SucceedSignScreenScreenState extends State<SucceedSignScreen> {
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: size.width*0.05),
                       child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateColor.resolveWith((states) => Color.fromRGBO(255,200,0,1))
-                        ),
                         onPressed: () {
                           Provider.of<AppStateManager>(context, listen: false)
                               .setsucceedsign(false);
@@ -90,7 +84,7 @@ class _SucceedSignScreenScreenState extends State<SucceedSignScreen> {
                           Provider.of<AppStateManager>(context, listen: false)
                               .setrestpassword(false);
                         },
-                        child: Text("الذاهب لصفحة تسجيل الدخول", style: TextStyle(fontSize: size.width*0.03,color: Colors.white),textAlign: TextAlign.center,)
+                        child: Text("الذاهب لصفحة تسجيل الدخول",textAlign: TextAlign.center,)
                       ),
                     ),
                   )

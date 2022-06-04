@@ -3,40 +3,22 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 class Api_functions {
-  static Future<dynamic> getRequest(String url) async {
-   final response = await http.get(Uri.parse(url));
-    /*await Future.delayed(const Duration(milliseconds: 3000));
+  static Future<Map<String,dynamic>>? getRequest(String url) async {
+   /* await Future.delayed(const Duration(milliseconds: 3000));
     final dataString = await _loadAsset(
       'assets/sample_data/categorydata.json',
     );*/
    try {
+     final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         String Jsondata = response.body;
         var decodedata = jsonDecode(Jsondata);
-        //***********documents**************/
-       /* print(decodedata["documents"][0]["name"]);
-        //***********enddocuments**************/
-        //********section***************//
-         print(decodedata["documents"][0]["fields"]["image"]["stringValue"]);
-        print(decodedata["documents"][0]["fields"]["name"]["stringValue"]);
-        print(decodedata["documents"][0]["fields"]["id"]["stringValue"]);
-        //********Endsection***************//
-        //********sectionproducts***************//
-        print(decodedata["documents"][0]["fields"]["product"]["arrayValue"]["values"][0]["mapValue"]["fields"]["count"]["stringValue"]);
-        print(decodedata["documents"][0]["fields"]["product"]["arrayValue"]["values"][0]["mapValue"]["fields"]["name"]["stringValue"]);
-        print(decodedata["documents"][0]["fields"]["product"]["arrayValue"]["values"][0]["mapValue"]["fields"]["id"]["stringValue"]);
-        print(decodedata["documents"][0]["fields"]["product"]["arrayValue"]["values"][0]["mapValue"]["fields"]["price"]["stringValue"]);
-        print(decodedata["documents"][0]["fields"]["product"]["arrayValue"]["values"][0]["mapValue"]["fields"]["image"]["stringValue"]);*/
-        print(response.body);
-        //********endsectionproducts***************//
         return decodedata;
       } else {
-        print(response.body);
-        return "404";
+        return {};
       }
-    } catch (exp) {
-      print(response.body);
-      return "500";
+    } catch (exp) {;
+      return {};
     }
   }
   static Future<dynamic> postRequest(String url) async {

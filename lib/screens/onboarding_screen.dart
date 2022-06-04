@@ -49,7 +49,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -58,7 +57,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 children: const [
                   Text(
                     "مرحبا بك في جمله",
-                    style: TextStyle(fontSize: 15),
                   ),
                 ],
               ),
@@ -74,7 +72,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: size.width / 4.80,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.blue.shade700),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     )),
@@ -85,7 +82,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         .completeOnboarding();
                   },
                   child: const Center(
-                      child: Icon(Icons.arrow_forward_sharp, size: 28)),
+                      child: Icon(Icons.arrow_forward_sharp)),
                 ),
               ),
             ],

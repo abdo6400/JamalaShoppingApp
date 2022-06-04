@@ -85,15 +85,10 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
         Provider.of<Auth>(context, listen: false).userInfo;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
         title: const Text(
           "تاكيد البيانات",
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        iconTheme: const IconThemeData(color: Colors.white),
         elevation: 2.0,
         centerTitle: true,
       ),
@@ -119,10 +114,6 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
               width: size.width,
               child: const Text(
                 "الرجاء ادخل الرمز المرسل علي هاتفك",
-                style: TextStyle(
-                    color: Colors.black54,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -137,12 +128,9 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
                 length: 6,
                 pinTheme: PinTheme(
                     shape: PinCodeFieldShape.box,
-                    activeColor: Colors.grey,
                     fieldHeight: size.height * 0.05,
                     fieldWidth: size.width * 0.1,
-                    activeFillColor: Colors.white,
-                    disabledColor: Colors.white,
-                    inactiveColor: Colors.grey),
+                ),
                 obscureText: false,
                 animationType: AnimationType.fade,
                 animationDuration: const Duration(milliseconds: 300),
@@ -170,9 +158,6 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.2),
               child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.blue)),
                 onPressed: () async {
                   FirebaseAuth auth = FirebaseAuth.instance;
                   try {
@@ -205,7 +190,6 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
                 },
                 child:const Text(
                   "الاستمرار",
-                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
             )

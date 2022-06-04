@@ -34,7 +34,6 @@ class _MainDrawerState extends State<MainDrawer> {
                 )),
                 child: Material(
                   elevation: 2.0,
-                  color: Colors.blueAccent.shade700,
                   shape: const RoundedRectangleBorder(
                     borderRadius:
                         BorderRadius.only(topLeft: Radius.circular(35)),
@@ -56,10 +55,6 @@ class _MainDrawerState extends State<MainDrawer> {
                       Container(
                         child: const Text(
                           "جمله",
-                          style: TextStyle(
-                              fontSize: 21,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
                         ),
                       ),
                     ],
@@ -85,7 +80,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 radius: size.height * 0.021,
                               ),
                               title: const Text("الصفحة الرئسية",
-                                  style: TextStyle(color: Colors.black)),
+                              ),
                               onTap: () {
                                 Navigator.of(context).pop();
                               }),
@@ -100,7 +95,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                       AssetImage('assets/icons/love.png'),
                               radius: size.height * 0.021,),
                               title: const Text("العناصرالمفضله",
-                                  style: TextStyle(color: Colors.black)),
+                                  ),
                               onTap: () {
                                 Provider.of<PageStateManager>(context,
                                         listen: false)
@@ -119,7 +114,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 radius: size.height * 0.021,
                               ),
                               title: const Text("قائمة الطلبات",
-                                  style: TextStyle(color: Colors.black)),
+                                 ),
                               onTap: () {
                                 Provider.of<PageStateManager>(context,
                                         listen: false)
@@ -138,7 +133,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 radius: size.height * 0.021,
                               ),
                               title: const Text("الصفحة الشخصيه",
-                                  style: TextStyle(color: Colors.black)),
+                                 ),
                               onTap: () {
                                 Provider.of<PageStateManager>(context,
                                         listen: false)
@@ -157,7 +152,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 radius: size.height * 0.021,
                               ),
                               title: const Text("تواصل معانا",
-                                  style: TextStyle(color: Colors.black)),
+                                  ),
                               onTap: () {
                                 Provider.of<PageStateManager>(context,
                                     listen: false).setcontact(true);
@@ -175,7 +170,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 radius: size.height * 0.021,
                               ),
                               title: const Text("تسجيل الخروج",
-                                  style: TextStyle(color: Colors.black)),
+                                  ),
                               onTap: () {
                                 Provider.of<Auth>(context,listen: false).Logout();
                                 Provider.of<AppStateManager>(context, listen: false).logOut();

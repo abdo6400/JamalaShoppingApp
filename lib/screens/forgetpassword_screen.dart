@@ -27,15 +27,10 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
         Provider.of<Auth>(context, listen: false).userInfo;
     return SafeArea(
         child: Scaffold(
-          backgroundColor: Color.fromRGBO(255, 255, 250, 0.9),
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
         title: const Text(
           "اعادة تعين كلمة المرور",
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
         elevation: 2.0,
         centerTitle: true,
       ),
@@ -45,7 +40,6 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
           child: Center(
             child: Card(
                 elevation: 10.0,
-                shadowColor: Colors.blueAccent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -77,19 +71,13 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                                   children: [
                                     const Text(
                                       "الرجاء ادخال رقم الهاتف",
-                                      style: TextStyle(
-                                          color: Colors.black26,
-                                          fontWeight: FontWeight.bold,),
                                     ),
                                     SizedBox(
                                       height: size.height * 0.02,
                                     ),
                                    const Text(
                                       "الذى تريد ان ترسل علية رسالة التاكيد",
-                                      style: TextStyle(
-                                          color: Colors.blueAccent,
-                                          fontWeight: FontWeight.bold,
-                                      ),
+
                                     )
                                   ],
                                 ),
@@ -102,8 +90,6 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.black38),
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child:  TextField(
@@ -116,13 +102,11 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                                   maxHeight: size.height * 0.1, maxWidth: size.width*0.7),
                               border: const OutlineInputBorder(),
                               hintText: "${userInfo!["email"]!}",
-                              hintStyle: TextStyle(color: Colors.black54),
                               hintTextDirection: TextDirection.rtl,
                               prefixIcon: Padding(
                                 padding: EdgeInsets.only(left: size.width * 0.05),
                                 child: const Icon(
                                   Icons.email,
-                                  color: Colors.blue,
                                 ),
                               ),
                             ),
@@ -136,9 +120,6 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                       Container(
                        padding: EdgeInsets.symmetric(horizontal: size.height*0.04),
                         child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateColor.resolveWith((states) => Colors.blue)
-                          ),
                           onPressed: () async{
                             try{
                              bool val =await Provider.of<Auth>(context,listen: false).changePassword("${userInfo["email"]!}");
@@ -150,7 +131,7 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                               snackBar(context, "$e", MediaQuery.of(context).size.width*0.3);
                             }
                           },
-                          child: const Text("الاستمرار",style: TextStyle(color: Colors.white,fontSize: 14),),
+                          child: const Text("الاستمرار"),
                         ),
                       )
                     ],

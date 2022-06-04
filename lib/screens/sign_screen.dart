@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:jamalashoppingapp/providers/sectionprovider.dart';
 import '../jamala_pages.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../widgets/helperwidgets.dart';
@@ -42,7 +43,6 @@ class _SignScreenState extends State<SignScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
       body: SignForm()
     ));
   }
@@ -77,6 +77,7 @@ class _SignFormState extends State<SignForm> {
     _authMode = AuthMode.SignIn;
     errors.clear();
   }
+
   void addError({String? error}) {
     if (!errors.contains(error))
       setState(() {
@@ -153,33 +154,28 @@ class _SignFormState extends State<SignForm> {
           height: _authMode == AuthMode.SignIn?size.height*0.125:size.height*0.1,
           width: size.width,
           decoration: BoxDecoration(
-              color: Colors.blue.shade700,
               border: Border(
                   bottom: BorderSide(
-                    color: Colors.grey,
                     width: 1.5
                   )
               ),
-              boxShadow: [
-                BoxShadow(
-                    offset: Offset(4, 4),
-                    blurRadius: 15,
-                    spreadRadius: 1,
-                    color: Colors.grey[500]!),
-                BoxShadow(
-                    offset: Offset(-4, -4),
-                    blurRadius: 15,
-                    spreadRadius: 1,
-                    color: Colors.white)
-              ]),
+              // boxShadow: [
+              //   BoxShadow(
+              //       offset: Offset(4, 4),
+              //       blurRadius: 15,
+              //       spreadRadius: 1,),
+              //   BoxShadow(
+              //       offset: Offset(-4, -4),
+              //       blurRadius: 15,
+              //       spreadRadius: 1,)
+              // ]
+          ),
         ),
         checkLogin ?Padding(
            padding: EdgeInsets.only(top: size.height*0.03),
            child: Align(
              alignment: Alignment.topCenter,
                child: const CircularProgressIndicator(
-                 color: Colors.white,
-                 backgroundColor: Colors.blueAccent,
                )
            ),
          ):Container(),
@@ -194,15 +190,12 @@ class _SignFormState extends State<SignForm> {
                   children: [
                     CircleAvatar(
                       maxRadius: size.height*0.06,
-                      backgroundColor: Colors.white,
                       child: Material(
                         elevation: 4,
                         animationDuration: Duration(milliseconds: 50),
-                        shadowColor: Colors.blueAccent,
                         shape: CircleBorder(),
                         child: CircleAvatar(
                             maxRadius: size.height*0.055,
-                            backgroundColor: Colors.white,
                             child: const Image(
                               image: AssetImage("assets/icons/store.png"),
                               fit: BoxFit.cover,
@@ -214,28 +207,12 @@ class _SignFormState extends State<SignForm> {
                     ),
                     const Text(
                       "مرحبا بك",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 30,
-                          color: Color.fromRGBO(50, 50, 50, 0.6)
-                      ),
                     ),
                     SizedBox(
                       height: size.height * 0.02,
                     ),
                     const Text(
                       "تسجيل الدخول",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          color: Colors.blueAccent,
-                          shadows: [
-                            BoxShadow(
-                              color: Colors.blue,
-                              spreadRadius: 15,
-                              offset: Offset(-1, -1),
-                            )
-                          ]
-                      ),
                     ),
                     const SizedBox(
                       height: 15,
@@ -250,25 +227,12 @@ class _SignFormState extends State<SignForm> {
                     children: [
                       const Text(
                         "إنشاء حساب ",
-                        style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            shadows: [
-                              BoxShadow(
-                                color: Colors.blue,
-                                spreadRadius: 15,
-                                offset: Offset(-1, -1),
-                              )
-                            ]
-                        ),
                       ),
                       SizedBox(
                         width: size.height * 0.05,
                       ),
                       CircleAvatar(
                         maxRadius: size.height*0.055,
-                        backgroundColor: Colors.white,
                         child: Material(
                           elevation: 4,
                           animationDuration: Duration(milliseconds: 50),
@@ -276,7 +240,6 @@ class _SignFormState extends State<SignForm> {
                           shape: CircleBorder(),
                           child: CircleAvatar(
                               maxRadius: size.height*0.05,
-                              backgroundColor: Colors.white,
                               child: const Image(
                                 image: AssetImage("assets/icons/store.png"),
                                 fit: BoxFit.cover,
@@ -404,7 +367,6 @@ class _SignFormState extends State<SignForm> {
                                         padding: EdgeInsets.only(left: size.width * 0.05),
                                         child: const Icon(
                                           Icons.password_outlined,
-                                          color: Colors.blue,
                                         ),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
@@ -458,7 +420,6 @@ class _SignFormState extends State<SignForm> {
                                       EdgeInsets.only(left: size.width * 0.05),
                                       child: const Icon(
                                         Icons.supervised_user_circle_outlined,
-                                        color: Colors.blue,
                                       ),
                                     ),
                                   ),
@@ -504,7 +465,6 @@ class _SignFormState extends State<SignForm> {
                                       EdgeInsets.only(left: size.width * 0.05),
                                       child: const Icon(
                                         Icons.phone,
-                                        color: Colors.blue,
                                       ),
                                     ),
                                   ),
@@ -551,7 +511,6 @@ class _SignFormState extends State<SignForm> {
                                       width: size.width * 0.01,
                                     ),
                                     Checkbox(
-                                        activeColor: Colors.blue,
                                         value: value,
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(5)),
@@ -603,8 +562,6 @@ class _SignFormState extends State<SignForm> {
                                 toastLength: Toast.LENGTH_SHORT,
                                 gravity: ToastGravity.BOTTOM,
                                 timeInSecForIosWeb: 2,
-                                backgroundColor: Colors.red,
-                                textColor: Colors.white,
                                 fontSize: 16.0);
                           }
                         } catch (e) {
@@ -640,26 +597,23 @@ class _SignFormState extends State<SignForm> {
                     height: size.height / 16,
                     width: size.width * 0.8,
                     decoration: BoxDecoration(
-                        color: Colors.blueAccent.shade700,
                         borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(4, 4),
-                              blurRadius: 15,
-                              spreadRadius: 1,
-                              color: Colors.grey[500]!),
-                          BoxShadow(
-                              offset: Offset(-4, -4),
-                              blurRadius: 15,
-                              spreadRadius: 1,
-                              color: Colors.white)
-                        ]),
+                        // boxShadow: [
+                        //   BoxShadow(
+                        //       offset: Offset(4, 4),
+                        //       blurRadius: 15,
+                        //       spreadRadius: 1,),
+                        //   BoxShadow(
+                        //       offset: Offset(-4, -4),
+                        //       blurRadius: 15,
+                        //       spreadRadius: 1,)
+                        // ]
+                    ),
                     child: Center(
                       child: Text(
                         _authMode != AuthMode.SignUp
                             ? "تسجيل الدخول"
                             : "إنشاء الحساب ",
-                        style: const TextStyle(fontSize: 17,color: Colors.white),
                       ),
                     ),
                   ),
@@ -683,8 +637,6 @@ class _SignFormState extends State<SignForm> {
                           _authMode == AuthMode.SignUp
                               ? " .تسجيل الدخول"
                               : "!انشاء حساب",
-                          style: const TextStyle(
-                              color: Colors.blue, fontWeight: FontWeight.bold),
                         )),
                     TextButton(
                         onPressed: () async {
@@ -721,7 +673,6 @@ class _SignFormState extends State<SignForm> {
                           _authMode == AuthMode.SignUp
                               ? " لديك حساب بالفعل؟"
                               : "اعادة تعين كلمة المرور ؟",
-                          style: const TextStyle(color: Color.fromRGBO(50, 50, 50, 0.9)),
                         )),
                   ],
                 )

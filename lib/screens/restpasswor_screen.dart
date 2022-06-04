@@ -28,10 +28,7 @@ class _RestpasswordScreenState extends State<RestpasswordScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
           elevation: 0,
           centerTitle: true,
         ),
@@ -47,10 +44,6 @@ class _RestpasswordScreenState extends State<RestpasswordScreen> {
                   Container(
                     child: Text(
                       "اعادة تعين كلمة المرور",
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18),
                     ),
                   ),
                   Container(
@@ -91,7 +84,6 @@ class _RestpasswordScreenState extends State<RestpasswordScreen> {
                               padding: EdgeInsets.only(left: size.width * 0.05),
                               child: Icon(
                                 Icons.lock,
-                                color: Colors.blue,
                               ),
                             ),
                           ),
@@ -129,7 +121,6 @@ class _RestpasswordScreenState extends State<RestpasswordScreen> {
                               padding: EdgeInsets.only(left: size.width * 0.05),
                               child: Icon(
                                 Icons.lock,
-                                color: Colors.blue,
                               ),
                             ),
                           ),
@@ -158,7 +149,6 @@ class _RestpasswordScreenState extends State<RestpasswordScreen> {
                               padding: EdgeInsets.only(left: size.width * 0.05),
                               child: Icon(
                                 Icons.password_outlined,
-                                color: Colors.blue,
                               ),
                             ),
                             contentPadding: EdgeInsets.symmetric(
@@ -191,9 +181,6 @@ class _RestpasswordScreenState extends State<RestpasswordScreen> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.2),
                 child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateColor.resolveWith(
-                          (states) => Colors.blue)),
                   onPressed: () {
                     if (_formKey2.currentState!.validate()) {
                       _formKey2.currentState!.save();
@@ -203,7 +190,6 @@ class _RestpasswordScreenState extends State<RestpasswordScreen> {
                   },
                   child: Text(
                     "الاستمرار",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ),
               )

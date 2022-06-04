@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jamalashoppingapp/providers/datamodels/product.dart';
+import 'package:jamalashoppingapp/providers/sectionprovider.dart';
 import '../models/category.dart';
 import '../models/category_provider.dart';
 import 'package:provider/provider.dart';
@@ -13,11 +15,11 @@ class ItemSectionListView extends StatefulWidget {
 }
 
 class _ItemSectionListViewState extends State<ItemSectionListView> {
-  late List<Producttest> products;
+  late List<Product> products;
   @override
   void initState() {
     int index = Provider.of<PageStateManager>(context,listen: false).index;
-    products = Provider.of<CategoryProvider>(context,listen: false).getProducts(index);
+    products = Provider.of<SectionProvider>(context,listen: false).getProducts(index)!;
     super.initState();
   }
   @override

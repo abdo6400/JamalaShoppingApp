@@ -32,10 +32,8 @@ class _EditScreenState extends State<EditScreen> {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text('تعديل البيانات',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18),),
+            title: Text('تعديل البيانات',),
             centerTitle: true,
-            backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Colors.black),
           ),
           body: SingleChildScrollView(
             child: Container(
@@ -142,10 +140,6 @@ class _EditScreenState extends State<EditScreen> {
                       child: ElevatedButton(
                         onPressed: () {},
                         child: Text("تاكيد التعديل"),
-                        style: ButtonStyle(
-                          backgroundColor:
-                          MaterialStateColor.resolveWith((states) => Colors.blue),
-                        ),
                       ),
                     ),
                     Container(
@@ -155,10 +149,6 @@ class _EditScreenState extends State<EditScreen> {
                           Navigator.of(context).pop();
                         },
                         child: Text("الغاء التعديل "),
-                        style: ButtonStyle(
-                          backgroundColor:
-                          MaterialStateColor.resolveWith((states) => Colors.red),
-                        ),
                       ),
                     ),
                   ],

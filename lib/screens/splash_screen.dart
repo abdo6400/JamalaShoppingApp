@@ -52,7 +52,6 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               height: size.height,
               width: size.width,
-              decoration: BoxDecoration(color: Colors.blue.shade700),
               child: CustomPaint(
                 painter: BackgroundPaint(),
               ),
@@ -68,11 +67,8 @@ class _SplashScreenState extends State<SplashScreen> {
                       Material(
                         elevation: 4,
                         shape: CircleBorder(),
-                        shadowColor: Colors.grey,
-                        color: Colors.black,
                         child: CircleAvatar(
                           child: Image.asset("assets/icons/store.png"),
-                          backgroundColor: Colors.blue.shade700,
                           radius: size.height * 0.07,
                         ),
                       ),
@@ -83,22 +79,19 @@ class _SplashScreenState extends State<SplashScreen> {
                         height: size.height*0.05,
                         width: size.width*0.3,
                         decoration: BoxDecoration(
-                          color: Colors.blue.shade700,
                           borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(4, 4),
-                                  blurRadius: 10,
-                                  spreadRadius: 1,
-                                  color: Colors.grey[500]!),
-                              BoxShadow(
-                                  offset: Offset(-4, -4),
-                                  blurRadius: 10,
-                                  spreadRadius: 1,
-                                  color: Colors.white)
-                            ]
+                            // boxShadow: [
+                            //   BoxShadow(
+                            //       offset: Offset(4, 4),
+                            //       blurRadius: 10,
+                            //       spreadRadius: 1,),
+                            //   BoxShadow(
+                            //       offset: Offset(-4, -4),
+                            //       blurRadius: 10,
+                            //       spreadRadius: 1,)
+                            // ]
                         ),
-                        child: Center(child: Text("جمله",style: TextStyle(fontSize: 23,color: Colors.white),)),
+                        child: Center(child: Text("جمله")),
                       ),
                     ],
                   ),
@@ -107,12 +100,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                   Text(
                     "THIS APP CREATED BY AMA",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: size.height * 0.01,
-                    ),
                   ),
-
                 ],
               ),
             )
