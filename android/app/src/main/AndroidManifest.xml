@@ -36,7 +36,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
-                    android:host="amaprojects-bd0da.firebaseapp.com"
+                    android:host="amaproject-f7397.firebaseapp.com"
                     android:scheme="https"/>
             </intent-filter>
             <intent-filter>

@@ -31,8 +31,6 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
         title: const Text(
           "اعادة تعين كلمة المرور",
         ),
-        elevation: 2.0,
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -77,7 +75,6 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                                     ),
                                    const Text(
                                       "الذى تريد ان ترسل علية رسالة التاكيد",
-
                                     )
                                   ],
                                 ),
@@ -105,8 +102,9 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                               hintTextDirection: TextDirection.rtl,
                               prefixIcon: Padding(
                                 padding: EdgeInsets.only(left: size.width * 0.05),
-                                child: const Icon(
+                                child: Icon(
                                   Icons.email,
+                                  color: Theme.of(context).colorScheme.secondary,
                                 ),
                               ),
                             ),
@@ -120,6 +118,9 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                       Container(
                        padding: EdgeInsets.symmetric(horizontal: size.height*0.04),
                         child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)
+                          ),
                           onPressed: () async{
                             try{
                              bool val =await Provider.of<Auth>(context,listen: false).changePassword("${userInfo["email"]!}");
@@ -131,7 +132,7 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                               snackBar(context, "$e", MediaQuery.of(context).size.width*0.3);
                             }
                           },
-                          child: const Text("الاستمرار"),
+                          child:  Text("الاستمرار",style: Theme.of(context).textTheme.headline4,),
                         ),
                       )
                     ],

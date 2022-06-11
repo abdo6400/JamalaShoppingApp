@@ -52,6 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               height: size.height,
               width: size.width,
+              color: Theme.of(context).primaryColor,
               child: CustomPaint(
                 painter: BackgroundPaint(),
               ),
@@ -79,19 +80,22 @@ class _SplashScreenState extends State<SplashScreen> {
                         height: size.height*0.05,
                         width: size.width*0.3,
                         decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(20),
-                            // boxShadow: [
-                            //   BoxShadow(
-                            //       offset: Offset(4, 4),
-                            //       blurRadius: 10,
-                            //       spreadRadius: 1,),
-                            //   BoxShadow(
-                            //       offset: Offset(-4, -4),
-                            //       blurRadius: 10,
-                            //       spreadRadius: 1,)
-                            // ]
+                            boxShadow: [
+                            BoxShadow(
+                            offset: Offset(1, 1),
+                            blurRadius: 2,
+                            color: Theme.of(context).colorScheme.secondary,
+                            spreadRadius: 1,),
+                            BoxShadow(
+                              offset: Offset(-1, -1),
+                              blurRadius: 2,
+                              color: Theme.of(context).colorScheme.secondary,
+                              spreadRadius: 1,)
+                          ]
                         ),
-                        child: Center(child: Text("جمله")),
+                        child: Center(child: Text("جمله",style: Theme.of(context).textTheme.headline1,)),
                       ),
                     ],
                   ),

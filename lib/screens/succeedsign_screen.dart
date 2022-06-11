@@ -29,6 +29,7 @@ class _SucceedSignScreenScreenState extends State<SucceedSignScreen> {
         body: Container(
           height: size.height,
           width: size.width,
+          color: Theme.of(context).colorScheme.primary,
           padding: EdgeInsets.symmetric(
               vertical: size.height * 0.2, horizontal: size.width * 0.05),
           child: Card(
@@ -47,23 +48,27 @@ class _SucceedSignScreenScreenState extends State<SucceedSignScreen> {
                     right: 0,
                     child: Container(
                       width: size.width*0.5,
-                      decoration: const BoxDecoration(
-                        // boxShadow: [
-                        //   BoxShadow(
-                        //     spreadRadius: 0.1,
-                        //     blurRadius: 5
-                        //   )
-                        // ]
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.secondary,
+                        boxShadow: [
+                          BoxShadow(
+                            spreadRadius: 0.1,
+                            color: Colors.yellow,
+                            blurRadius: 5
+                          )
+                        ]
                       ),
                       child: Provider.of<AppStateManager>(context, listen: false)
                               .forgetscreen
                           ? Text(
                               "تم ارسال اميل بنجاح",
                             textAlign: TextAlign.center,
+                             style: Theme.of(context).textTheme.headline4,
                             )
                           : Text(
                               "تم التسجيل بنجاح",
                           textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headline4,
                             ),
                     ),
                   ),
@@ -74,6 +79,9 @@ class _SucceedSignScreenScreenState extends State<SucceedSignScreen> {
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: size.width*0.05),
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)
+                        ),
                         onPressed: () {
                           Provider.of<AppStateManager>(context, listen: false)
                               .setsucceedsign(false);

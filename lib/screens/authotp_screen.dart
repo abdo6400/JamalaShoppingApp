@@ -128,6 +128,8 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
                 length: 6,
                 pinTheme: PinTheme(
                     shape: PinCodeFieldShape.box,
+                    activeColor: Theme.of(context).colorScheme.primary,
+                    inactiveColor: Theme.of(context).colorScheme.secondary,
                     fieldHeight: size.height * 0.05,
                     fieldWidth: size.width * 0.1,
                 ),
@@ -152,12 +154,15 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
                 active?TextButton(
                   onPressed: () => resendVerificationCode(userInfo!["phoneNumber"]!),
                   child: const Text("اعادة ارسال الكود"),
-              ):const Text("اعادة ارسال الكود",style: TextStyle(color: Colors.blueAccent),),
+              ):const Text("اعادة ارسال الكود"),
             ],),
             checkresend?Transform.scale(scale: 0.2, child: const CircularProgressIndicator() ): Container(),
             Container(
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.2),
               child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)
+                ),
                 onPressed: () async {
                   FirebaseAuth auth = FirebaseAuth.instance;
                   try {
@@ -188,8 +193,9 @@ class _AuthOtpScreenState extends State<AuthOtpScreen> {
                     showDailog1(context, "$e");
                   }
                 },
-                child:const Text(
+                child: Text(
                   "الاستمرار",
+                  style: Theme.of(context).textTheme.headline4,
                 ),
               ),
             )

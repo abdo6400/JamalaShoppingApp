@@ -23,20 +23,6 @@ void showDailog(BuildContext context, String Message) {
         )
       ),
       content: Container(
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                  offset: Offset(1, 1),
-                  blurRadius: 1,
-                  spreadRadius: 1,
-              ),
-              BoxShadow(
-                  offset: Offset(-4, -4),
-                  blurRadius: 1,
-                  spreadRadius: 2,
-                  )
-            ]
-        ),
         height: 200,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

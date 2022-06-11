@@ -9,7 +9,7 @@ class NotifiactionListView extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
         padding: EdgeInsets.symmetric(
-            vertical: size.height * 0.04, horizontal: size.width * 0.05),
+            vertical: size.height * 0.02),
         height: size.height,
         width: size.width,
         child: ListView.separated(
@@ -19,9 +19,9 @@ class NotifiactionListView extends StatelessWidget {
               index: index + 1,
             );
           },
-          itemCount: 4,
+          itemCount: 10,
           separatorBuilder: (ctx, index) {
-            return SizedBox(height: size.height*0.01,);
+            return Spacer();
           },
         ));
   }

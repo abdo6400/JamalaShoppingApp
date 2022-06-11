@@ -38,8 +38,7 @@ class NotificationItem extends StatelessWidget {
           );
         },
         child: Card(
-          elevation: 5.0,
-          margin: EdgeInsets.symmetric(vertical: size.height * 0.01),
+          elevation: 2.0,
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Row(

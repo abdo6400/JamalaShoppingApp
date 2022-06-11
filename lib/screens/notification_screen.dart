@@ -25,10 +25,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        title: const Text('الرسائل'),
-        centerTitle: true,
-      ),
       body: const NotifiactionListView(),
     ));
   }

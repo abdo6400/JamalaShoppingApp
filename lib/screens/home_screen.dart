@@ -36,28 +36,51 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
         child: Scaffold(
       key: _key,
-     body: Pages[currentIndex],
-      endDrawer: MainDrawer(),
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          selectedFontSize: 15,
-          elevation: 2.0,
-          currentIndex: currentIndex,
-          onTap: (newIndex){
-            if(newIndex==0)
-              _key.currentState!.openEndDrawer();
-            else
-              setState((){
-              currentIndex = newIndex;
-              });
-          },
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.dashboard_customize),label: 'المزيد'),
-            BottomNavigationBarItem(icon: Icon(Icons.notifications_none),label: 'الرسائل'),
-            BottomNavigationBarItem(icon:Icon(Icons.shopping_cart_sharp),label: 'العربه'),
-            BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: 'الرئيسة',),
+     body: Stack(
+       children: [
+         Pages[currentIndex],
+         Positioned(
+             bottom: 0,
+             child: Container(
+               height: size.height*0.08,
+               width: size.width,
+               decoration: BoxDecoration(
+                 borderRadius: BorderRadius.only(
+                     topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+                 boxShadow: [
+                   BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+                 ],
+               ),
+               child: ClipRRect(
+                 borderRadius: BorderRadius.only(
+                   topLeft: Radius.circular(30.0),
+                   topRight: Radius.circular(30.0),
+                 ),
+                 child: BottomNavigationBar(
+                     type: BottomNavigationBarType.fixed,
+                     selectedFontSize: 15,
+                     elevation: 2.0,
+                     currentIndex: currentIndex,
+                     onTap: (newIndex){
+                       if(newIndex==0)
+                         _key.currentState!.openEndDrawer();
+                       else
+                         setState((){
+                           currentIndex = newIndex;
+                         });
+                     },
+                     items: [
+                       BottomNavigationBarItem(icon: Icon(Icons.dashboard_customize),label: 'المزيد'),
+                       BottomNavigationBarItem(icon: Icon(Icons.notifications_none),label: 'الرسائل'),
+                       BottomNavigationBarItem(icon:Icon(Icons.shopping_cart_sharp),label: 'العربه'),
+                       BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: 'الرئيسة',),
 
-      ]),
+                     ]),),
+             ),
+         )
+       ],
+     ),
+      endDrawer: MainDrawer(),
     ));
   }
 }

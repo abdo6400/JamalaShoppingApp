@@ -69,9 +69,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
               SizedBox(
                 height: size.height / 15,
-                width: size.width / 4.80,
+                width: size.width*0.2,
                 child: ElevatedButton(
                   style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     )),
@@ -149,7 +150,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               Text(
                 text1,
                 style: TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: size.height * 0.04),
+                    fontWeight: FontWeight.bold, fontSize: size.height * 0.03,color: Theme.of(context).colorScheme.secondary),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
@@ -158,7 +159,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               Text(
                 text2,
                 style: TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: size.height * 0.04),
+                    fontWeight: FontWeight.bold, fontSize: size.height * 0.03,color: Theme.of(context).colorScheme.secondary),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
@@ -167,7 +168,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               Text(
                 text3,
                 style: TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: size.height * 0.04),
+                    fontWeight: FontWeight.bold, fontSize: size.height * 0.03),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -181,8 +182,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return SmoothPageIndicator(
       controller: _pageController,
       count: 3,
-      effect: const WormEffect(
-          activeDotColor: Colors.grey, dotHeight: 4, dotWidth: 5),
+      effect: WormEffect(
+          activeDotColor: Theme.of(context).colorScheme.secondary, dotHeight: 4, dotWidth: 5),
     );
   }
 }

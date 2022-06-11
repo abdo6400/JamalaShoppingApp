@@ -27,18 +27,18 @@ class _CartScreenState extends State<CartScreen> {
     return SafeArea(
         child: Scaffold(
           backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('عربة التسوق'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                Provider.of<PageStateManager>(context, listen: false)
-                    .setorder(true);
-              },
-              icon: Icon(Icons.list_alt_outlined))
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: Text('عربة التسوق'),
+      //   centerTitle: true,
+      //   actions: [
+      //     IconButton(
+      //         onPressed: () {
+      //           Provider.of<PageStateManager>(context, listen: false)
+      //               .setorder(true);
+      //         },
+      //         icon: Icon(Icons.list_alt_outlined))
+      //   ],
+      // ),
       body: i == 0
           ?
       CartListView():EmptyCartScreen(),

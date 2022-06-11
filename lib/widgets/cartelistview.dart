@@ -65,10 +65,27 @@ class CartListView extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Container(
-        height: size.height,
+        height: size.height*0.9,
         width: size.width,
         child: Column(
           children: [
+            SizedBox(
+              width: size.width,
+              child: ElevatedButton(
+
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("الاستمرار"),
+                      SizedBox(width: size.width*0.1,),
+                      Icon(Icons.arrow_upward),
+                    ],
+                  ),
+                  onPressed: (){
+                    showbottomsheet(context);
+                  }
+              ),
+            ),
             Expanded(
               child: Container(
                 width: size.width,
@@ -86,23 +103,6 @@ class CartListView extends StatelessWidget {
                 ),
               ),
             ),
-             SizedBox(
-                width: size.width,
-                child: ElevatedButton(
-
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("الاستمرار"),
-                        SizedBox(width: size.width*0.1,),
-                        Icon(Icons.arrow_upward),
-                      ],
-                    ),
-                    onPressed: (){
-                      showbottomsheet(context);
-                      }
-                  ),
-              )
           ],
         ),
       ),

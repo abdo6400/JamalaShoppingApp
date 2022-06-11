@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:jamalashoppingapp/providers/datamodels/product.dart';
 import 'package:jamalashoppingapp/providers/sectionprovider.dart';
 import 'package:provider/provider.dart';
-import '../models/category.dart';
-import '../models/category_provider.dart';
 import '../models/page_manager.dart';
 import '../widgets/widgets.dart';
 

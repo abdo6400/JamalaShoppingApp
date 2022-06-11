@@ -14,7 +14,7 @@ class SectionsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: Provider.of<CategoryProvider>(context,listen: false).getCategories(),
+        future: Provider.of<SectionProvider>(context,listen: false).getCategories(),
         builder: (ctx, snp) {
           if (snp.connectionState == ConnectionState.waiting)
             return Container(

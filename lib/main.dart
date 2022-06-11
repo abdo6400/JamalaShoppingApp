@@ -27,7 +27,6 @@ class _MyAppState extends State<MyApp> {
   final PageStateManager _pageStateManager = PageStateManager();
   final CarteStateManager _carteStateManager = CarteStateManager();
   final OrderStateManager _orderStateManager = OrderStateManager();
-  final CategoryProvider _categoryProvider = CategoryProvider();
   AppRouter? _appRouter;
 
   @override
@@ -51,7 +50,6 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (_) => _pageStateManager),
         ChangeNotifierProvider(create: (_) => _carteStateManager),
         ChangeNotifierProvider(create: (_) => _orderStateManager),
-        ChangeNotifierProvider(create: (_) => _categoryProvider),
         ChangeNotifierProvider(create: (_) => Auth()),
         ChangeNotifierProvider(create: (_) => Cart()),
         ChangeNotifierProvider(create: (_) => Orders()),
