@@ -195,7 +195,7 @@ class _MainScreenState extends State<MainScreen> {
                       return const progressDialog(mssage: "Loading . . .");
                     } else {
                       return Container(
-                        height: size.height * 0.85,
+                        height: size.height * 0.8,
                         width: size.width,
                         child: ListView(
                           children: [
@@ -273,7 +273,7 @@ class _MainScreenState extends State<MainScreen> {
                               height: size.height * 0.15,
                               child: SectionsListView(),
                             ),
-                            Card(
+                            Container(
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: size.width * 0.05),
@@ -288,6 +288,7 @@ class _MainScreenState extends State<MainScreen> {
                                     ),
                                     Icon(
                                       Icons.star,
+                                      color: Colors.amber,
                                     ),
                                   ],
                                 ),),
@@ -296,7 +297,6 @@ class _MainScreenState extends State<MainScreen> {
                                     left: 0.0,
                                     right: 0.0,
                                     bottom: size.height * 0.01),
-                              elevation: 2.0,
                             ),
                             ItemSection(),
                           ],

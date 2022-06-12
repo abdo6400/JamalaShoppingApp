@@ -144,262 +144,174 @@ class _SignFormState extends State<SignForm> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Stack(
-      children: [
-        AnimatedContainer(
-          duration: Duration(milliseconds: 50),
-          curve: Curves.slowMiddle,
-          height: _authMode == AuthMode.SignIn
-              ? size.height * 0.125
-              : size.height * 0.1,
-          width: size.width,
-          decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              border: Border(bottom: BorderSide(width: 1.5,color: Colors.white)),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(1, 1),
-                  blurRadius: 2,
-                  color: Theme.of(context).colorScheme.primary,
-                  spreadRadius: 1,
+    return Container(
+      height: size.height,
+      width: size.width,
+      color: Theme.of(context).primaryColor,
+      child: Stack(
+        children: [
+          Positioned(
+            top: size.height*0.08,
+              child:
+           Material(
+             elevation: 10.0,
+             shadowColor: Theme.of(context).primaryColor,
+             shape: RoundedRectangleBorder(
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(50),topRight: Radius.circular(50))
+             ),
+             child: Container(
+               height: size.height*0.9,
+               width: size.width,
+                padding: EdgeInsets.only(top: size.height*0.05),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(50),topRight: Radius.circular(50)),
                 ),
-                BoxShadow(
-                  offset: Offset(-1, -1),
-                  blurRadius: 2,
-                  color: Theme.of(context).colorScheme.primary,
-                  spreadRadius: 1,
-                )
-              ]),
-        ),
-        checkLogin
-            ? Padding(
-                padding: EdgeInsets.only(top: size.height * 0.03),
-                child: Align(
-                    alignment: Alignment.topCenter,
-                    child: const CircularProgressIndicator(
-                      color: Colors.white,
-                      strokeWidth: 2.0,
-                    )),
-              )
-            : Container(),
-        SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.only(
-                top: _authMode == AuthMode.SignIn
-                    ? size.height * 0.1
-                    : size.height * 0.08),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                _authMode == AuthMode.SignIn
-                    ? Column(
-                        children: [
-                          CircleAvatar(
-                            maxRadius: size.height * 0.06,
-                            child: Material(
-                              elevation: 4,
-                              animationDuration: Duration(milliseconds: 50),
-                              shape: CircleBorder(),
-                              shadowColor: Theme.of(context).colorScheme.primary,
-                              child: CircleAvatar(
+                child: Column(
+                  children: [
+                    _authMode == AuthMode.SignIn
+                        ? Column(
+                            children: [
+                              CircleAvatar(
+                                maxRadius: size.height * 0.06,
+                                child: Material(
+                                  elevation: 4,
+                                  animationDuration: Duration(milliseconds: 50),
+                                  shape: CircleBorder(),
+                                  shadowColor: Theme.of(context).colorScheme.primary,
+                                  child: CircleAvatar(
+                                      maxRadius: size.height * 0.055,
+                                      child: const Image(
+                                        image: AssetImage("assets/icons/store.png"),
+                                        fit: BoxFit.cover,
+                                      )),
+                                ),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                              const Text(
+                                "مرحبا بك",
+                                style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                              const Text(
+                                "تسجيل الدخول",
+                                style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                            ],
+                          )
+                        : Padding(
+                            padding: EdgeInsets.only(right: size.width * 0.1),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  "إنشاء حساب ",
+                                  style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  width: size.height * 0.05,
+                                ),
+                                CircleAvatar(
                                   maxRadius: size.height * 0.055,
-                                  child: const Image(
-                                    image: AssetImage("assets/icons/store.png"),
-                                    fit: BoxFit.cover,
-                                  )),
+                                  child: Material(
+                                    elevation: 4,
+                                    animationDuration: Duration(milliseconds: 50),
+                                    shadowColor: Theme.of(context).colorScheme.primary,
+                                    shape: CircleBorder(),
+                                    child: CircleAvatar(
+                                        maxRadius: size.height * 0.05,
+                                        child: const Image(
+                                          image:
+                                              AssetImage("assets/icons/store.png"),
+                                          fit: BoxFit.cover,
+                                        )),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          SizedBox(
-                            height: size.height * 0.02,
-                          ),
-                          const Text(
-                            "مرحبا بك",
-                            style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.02,
-                          ),
-                          const Text(
-                            "تسجيل الدخول",
-                            style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                        ],
-                      )
-                    : Padding(
-                        padding: EdgeInsets.only(right: size.width * 0.1),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                    Padding(
+                      padding: EdgeInsets.only(
+                          right: size.width * 0.06,
+                          left: size.width * 0.06,
+                          top: size.height * 0.03,
+                          bottom: 0),
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
                           children: [
-                            const Text(
-                              "إنشاء حساب ",
-                              style: TextStyle(fontSize: 21,fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              width: size.height * 0.05,
-                            ),
-                            CircleAvatar(
-                              maxRadius: size.height * 0.055,
-                              child: Material(
-                                elevation: 4,
-                                animationDuration: Duration(milliseconds: 50),
-                                shadowColor: Theme.of(context).colorScheme.primary,
-                                shape: CircleBorder(),
-                                child: CircleAvatar(
-                                    maxRadius: size.height * 0.05,
-                                    child: const Image(
-                                      image:
-                                          AssetImage("assets/icons/store.png"),
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      right: size.width * 0.06,
-                      left: size.width * 0.06,
-                      top: size.height * 0.03,
-                      bottom: 0),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        Card(
-                          elevation: 2,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          child: TextFormField(
-                            controller: _EmailController,
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: size.height * 0.01,
-                                  horizontal: size.width * 0.02),
-                              border: InputBorder.none,
-                              constraints: BoxConstraints(
-                                  maxHeight: size.height * 0.1,
-                                  maxWidth: size.width),
-                              hintText: "ادخل بريدك الالكتروني",
-                              hintTextDirection: TextDirection.rtl,
-                              prefixIcon: Padding(
-                                padding:
-                                    EdgeInsets.only(left: size.width * 0.05),
-                                child: Icon(Icons.email_outlined,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .secondary),
-                              ),
-                            ),
-                            keyboardType: TextInputType.emailAddress,
-                            onChanged: (value) {
-                              if (value != null || value.contains("@")) {
-                                removeError(
-                                    error: "الرجاء ادخال بريد الالكتروني صالح");
-                              }
-                            },
-                            validator: (value) {
-                              if (value == null || !value.contains("@")) {
-                                addError(
-                                    error: "الرجاء ادخال بريد الالكتروني صالح");
-                                //return "";
-                              } else {
-                                return null;
-                              }
-                            },
-                          ),
-                        ),
-                        SizedBox(
-                          height: size.height * 0.02,
-                        ),
-                        Card(
-                          elevation: 2,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: size.height * 0.01,
-                                  horizontal: size.width * 0.02),
-                              constraints: BoxConstraints(
-                                  maxHeight: size.height * 0.1,
-                                  maxWidth: size.width),
-                              border: InputBorder.none,
-                              hintText: "ادخل كلمة المرور",
-                              hintTextDirection: TextDirection.rtl,
-                              prefixIcon: Padding(
-                                padding:
-                                    EdgeInsets.only(left: size.width * 0.05),
-                                child: Icon(Icons.lock,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .secondary),
-                              ),
-                              suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    if (seepassword)
-                                      seepassword = false;
-                                    else
-                                      seepassword = true;
-                                  });
-                                },
-                                icon: Icon(
-                                    seepassword
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .secondary),
-                              ),
-                            ),
-                            obscureText: seepassword,
-                            keyboardType: TextInputType.text,
-
-                            onChanged: (value) {
-                              if (value != null ||
-                                  value.length > 7 ||
-                                  value.length < 15) {
-                                removeError(error: "كلمة مرور غير صحيحة");
-                              }
-                            },
-                            validator: (value) {
-                              if (value == null ||
-                                  value.length < 7 ||
-                                  value.length > 15) {
-                                addError(error: "كلمة مرور غير صحيحة");
-                                //return "";
-                              } else {
-                                return null;
-                              }
-                            },
-                            controller: _PasswordController,
-                          ),
-                        ),
-                        if (_authMode == AuthMode.SignUp)
-                          SizedBox(
-                            height: size.height * 0.02,
-                          ),
-                        if (_authMode == AuthMode.SignUp)
-                          Card(
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            child: TextFormField(
-                              obscureText: seepassword,
-                              keyboardType: TextInputType.text,
-                              decoration: InputDecoration(
-                                  hintText: "اعادة ادخال كلمة المرور",
+                            Card(
+                              elevation: 2,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: TextFormField(
+                                controller: _EmailController,
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: size.height * 0.01,
+                                      horizontal: size.width * 0.02),
+                                  border: InputBorder.none,
+                                  constraints: BoxConstraints(
+                                      maxHeight: size.height * 0.1,
+                                      maxWidth: size.width),
+                                  hintText: "ادخل بريدك الالكتروني",
                                   hintTextDirection: TextDirection.rtl,
                                   prefixIcon: Padding(
-                                    padding: EdgeInsets.only(
-                                        left: size.width * 0.05),
-                                    child: Icon(
-                                        Icons.password,
+                                    padding:
+                                        EdgeInsets.only(left: size.width * 0.05),
+                                    child: Icon(Icons.email_outlined,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.emailAddress,
+                                onChanged: (value) {
+                                  if (value != null || value.contains("@")) {
+                                    removeError(
+                                        error: "الرجاء ادخال بريد الالكتروني صالح");
+                                  }
+                                },
+                                validator: (value) {
+                                  if (value == null || !value.contains("@")) {
+                                    addError(
+                                        error: "الرجاء ادخال بريد الالكتروني صالح");
+                                    //return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                              ),
+                            ),
+                            SizedBox(
+                              height: size.height * 0.02,
+                            ),
+                            Card(
+                              elevation: 2,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: size.height * 0.01,
+                                      horizontal: size.width * 0.02),
+                                  constraints: BoxConstraints(
+                                      maxHeight: size.height * 0.1,
+                                      maxWidth: size.width),
+                                  border: InputBorder.none,
+                                  hintText: "ادخل كلمة المرور",
+                                  hintTextDirection: TextDirection.rtl,
+                                  prefixIcon: Padding(
+                                    padding:
+                                        EdgeInsets.only(left: size.width * 0.05),
+                                    child: Icon(Icons.lock,
                                         color: Theme.of(context)
                                             .colorScheme
                                             .secondary),
@@ -421,342 +333,396 @@ class _SignFormState extends State<SignForm> {
                                             .colorScheme
                                             .secondary),
                                   ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.02,
-                                      vertical: size.height * 0.01),
-                                  constraints: BoxConstraints(
-                                      maxHeight: size.height * 0.1,
-                                      maxWidth: size.width),
-                                  border: InputBorder.none),
-                              onChanged: (value) {
-                                if (value != null ||
-                                    value == _PasswordController.text) {
-                                  removeError(error: "كلمة المرور غير متطابقة");
-                                }
-                              },
-                              validator: (value) {
-                                if (value == null ||
-                                    value != _PasswordController.text) {
-                                  addError(error: "كلمة المرور غير متطابقة");
-                                  //return "";
-                                } else {
-                                  return null;
-                                }
-                              },
+                                ),
+                                obscureText: seepassword,
+                                keyboardType: TextInputType.text,
+
+                                onChanged: (value) {
+                                  if (value != null ||
+                                      value.length > 7 ||
+                                      value.length < 15) {
+                                    removeError(error: "كلمة مرور غير صحيحة");
+                                  }
+                                },
+                                validator: (value) {
+                                  if (value == null ||
+                                      value.length < 7 ||
+                                      value.length > 15) {
+                                    addError(error: "كلمة مرور غير صحيحة");
+                                    //return "";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                controller: _PasswordController,
+                              ),
                             ),
-                          ),
-                        if (_authMode == AuthMode.SignUp)
-                          SizedBox(
-                            height: size.height * 0.02,
-                          ),
-                        if (_authMode == AuthMode.SignUp)
-                          Card(
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            child: TextFormField(
-                              controller: _UserNameController,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: size.height * 0.01,
-                                    horizontal: size.width * 0.02),
-                                constraints: BoxConstraints(
-                                    maxHeight: size.height * 0.1,
-                                    maxWidth: size.width),
-                                hintText: "اسم المستخدم",
-                                hintTextDirection: TextDirection.rtl,
-                                prefixIcon: Padding(
-                                  padding:
-                                      EdgeInsets.only(left: size.width * 0.05),
-                                  child: Icon(
-                                      Icons.supervised_user_circle_outlined,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary),
+                            if (_authMode == AuthMode.SignUp)
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                            if (_authMode == AuthMode.SignUp)
+                              Card(
+                                elevation: 2,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: TextFormField(
+                                  obscureText: seepassword,
+                                  keyboardType: TextInputType.text,
+                                  decoration: InputDecoration(
+                                      hintText: "اعادة ادخال كلمة المرور",
+                                      hintTextDirection: TextDirection.rtl,
+                                      prefixIcon: Padding(
+                                        padding: EdgeInsets.only(
+                                            left: size.width * 0.05),
+                                        child: Icon(
+                                            Icons.password,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .secondary),
+                                      ),
+                                      suffixIcon: IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            if (seepassword)
+                                              seepassword = false;
+                                            else
+                                              seepassword = true;
+                                          });
+                                        },
+                                        icon: Icon(
+                                            seepassword
+                                                ? Icons.visibility
+                                                : Icons.visibility_off,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .secondary),
+                                      ),
+                                      contentPadding: EdgeInsets.symmetric(
+                                          horizontal: size.width * 0.02,
+                                          vertical: size.height * 0.01),
+                                      constraints: BoxConstraints(
+                                          maxHeight: size.height * 0.1,
+                                          maxWidth: size.width),
+                                      border: InputBorder.none),
+                                  onChanged: (value) {
+                                    if (value != null ||
+                                        value == _PasswordController.text) {
+                                      removeError(error: "كلمة المرور غير متطابقة");
+                                    }
+                                  },
+                                  validator: (value) {
+                                    if (value == null ||
+                                        value != _PasswordController.text) {
+                                      addError(error: "كلمة المرور غير متطابقة");
+                                      //return "";
+                                    } else {
+                                      return null;
+                                    }
+                                  },
                                 ),
                               ),
-                              keyboardType: TextInputType.name,
-                              onChanged: (value) {
-                                if (value != null || value.length > 3) {
-                                  removeError(
-                                      error: "الرجاء ادخال اسم المستخدم");
-                                }
-                              },
-                              validator: (value) {
-                                if (value == null || value.length < 3) {
-                                  addError(error: "الرجاء ادخال اسم المستخدم");
-                                  //return "";
-                                } else {
-                                  return null;
-                                }
-                              },
-                            ),
-                          ),
-                        if (_authMode == AuthMode.SignUp)
-                          SizedBox(
-                            height: size.height * 0.02,
-                          ),
-                        if (_authMode == AuthMode.SignUp)
-                          Card(
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            child: TextFormField(
-                              controller: _PhoneNumberController,
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: size.height * 0.01,
-                                    horizontal: size.width * 0.02),
-                                constraints: BoxConstraints(
-                                    maxHeight: size.height * 0.1,
-                                    maxWidth: size.width),
-                                hintText: "ادخل رقم الهاتف",
-                                hintTextDirection: TextDirection.rtl,
-                                border: InputBorder.none,
-                                prefixIcon: Padding(
-                                  padding:
-                                      EdgeInsets.only(left: size.width * 0.05),
-                                  child: Icon(
-                                    Icons.phone,
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
+                            if (_authMode == AuthMode.SignUp)
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                            if (_authMode == AuthMode.SignUp)
+                              Card(
+                                elevation: 2,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: TextFormField(
+                                  controller: _UserNameController,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    contentPadding: EdgeInsets.symmetric(
+                                        vertical: size.height * 0.01,
+                                        horizontal: size.width * 0.02),
+                                    constraints: BoxConstraints(
+                                        maxHeight: size.height * 0.1,
+                                        maxWidth: size.width),
+                                    hintText: "اسم المستخدم",
+                                    hintTextDirection: TextDirection.rtl,
+                                    prefixIcon: Padding(
+                                      padding:
+                                          EdgeInsets.only(left: size.width * 0.05),
+                                      child: Icon(
+                                          Icons.supervised_user_circle_outlined,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .secondary),
+                                    ),
                                   ),
+                                  keyboardType: TextInputType.name,
+                                  onChanged: (value) {
+                                    if (value != null || value.length > 3) {
+                                      removeError(
+                                          error: "الرجاء ادخال اسم المستخدم");
+                                    }
+                                  },
+                                  validator: (value) {
+                                    if (value == null || value.length < 3) {
+                                      addError(error: "الرجاء ادخال اسم المستخدم");
+                                      //return "";
+                                    } else {
+                                      return null;
+                                    }
+                                  },
                                 ),
                               ),
-                              keyboardType: TextInputType.phone,
-                              onChanged: (value) {
-                                if (value != null || value.length == 11) {
-                                  removeError(
-                                      error: "الرجاء ادخال رقم هاتف صحيح");
-                                }
-                              },
-                              validator: (value) {
-                                if (value == null || value.length != 11) {
-                                  addError(error: "الرجاء ادخال رقم هاتف صحيح");
-                                  //return "";
-                                } else {
-                                  return null;
-                                }
-                              },
+                            if (_authMode == AuthMode.SignUp)
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                            if (_authMode == AuthMode.SignUp)
+                              Card(
+                                elevation: 2,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: TextFormField(
+                                  controller: _PhoneNumberController,
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        vertical: size.height * 0.01,
+                                        horizontal: size.width * 0.02),
+                                    constraints: BoxConstraints(
+                                        maxHeight: size.height * 0.1,
+                                        maxWidth: size.width),
+                                    hintText: "ادخل رقم الهاتف",
+                                    hintTextDirection: TextDirection.rtl,
+                                    border: InputBorder.none,
+                                    prefixIcon: Padding(
+                                      padding:
+                                          EdgeInsets.only(left: size.width * 0.05),
+                                      child: Icon(
+                                        Icons.phone,
+                                        color:
+                                            Theme.of(context).colorScheme.secondary,
+                                      ),
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.phone,
+                                  onChanged: (value) {
+                                    if (value != null || value.length == 11) {
+                                      removeError(
+                                          error: "الرجاء ادخال رقم هاتف صحيح");
+                                    }
+                                  },
+                                  validator: (value) {
+                                    if (value == null || value.length != 11) {
+                                      addError(error: "الرجاء ادخال رقم هاتف صحيح");
+                                      //return "";
+                                    } else {
+                                      return null;
+                                    }
+                                  },
+                                ),
+                              ),
+                            SizedBox(
+                              height: size.height * 0.02,
                             ),
-                          ),
-                        SizedBox(
-                          height: size.height * 0.02,
+                            errors.isEmpty
+                                ? Container()
+                                : Container(
+                                    height: size.height * 0.06,
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: size.width * 0.04),
+                                    child: ListView.builder(
+                                        itemCount: errors.length,
+                                        itemBuilder: (ctx, index) {
+                                          return Text(
+                                            "${errors[index]}",
+                                            style: TextStyle(color: Colors.red),
+                                          );
+                                        }),
+                                  ),
+                            if (_authMode != AuthMode.SignUp)
+                              Padding(
+                                padding: EdgeInsets.only(right: size.width * 0.04),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "البقاء قيد التسجيل",
+                                    ),
+                                    SizedBox(
+                                      width: size.width * 0.01,
+                                    ),
+                                    Checkbox(
+                                        value: value,
+                                        activeColor:
+                                            Theme.of(context).colorScheme.secondary,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(5)),
+                                        onChanged: (val) {
+                                          setState(() {
+                                            value = val!;
+                                          });
+                                        }),
+                                  ],
+                                ),
+                              ),
+                          ],
                         ),
-                        errors.isEmpty
-                            ? Container()
-                            : Container(
-                                height: size.height * 0.06,
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: size.width * 0.04),
-                                child: ListView.builder(
-                                    itemCount: errors.length,
-                                    itemBuilder: (ctx, index) {
-                                      return Text(
-                                        "${errors[index]}",
-                                        style: TextStyle(color: Colors.red),
-                                      );
-                                    }),
-                              ),
-                        if (_authMode != AuthMode.SignUp)
-                          Padding(
-                            padding: EdgeInsets.only(right: size.width * 0.04),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "البقاء قيد التسجيل",
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.01,
-                                ),
-                                Checkbox(
-                                    value: value,
-                                    activeColor:
-                                        Theme.of(context).colorScheme.secondary,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    onChanged: (val) {
-                                      setState(() {
-                                        value = val!;
-                                      });
-                                    }),
-                              ],
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: size.height * 0.01,
-                ),
-                InkWell(
-                  onTap: () async {
-                    if (_formKey.currentState!.validate() && errors.isEmpty) {
-                      setState(() {
-                        checkLogin = true;
-                      });
-                      if (_authMode == AuthMode.SignUp) {
-                        try {
-                          bool val =
-                              await Provider.of<Auth>(context, listen: false)
-                                  .checkIfEmailInUse(_EmailController.text);
-                          if (!val) {
-                            await Provider.of<Auth>(context, listen: false)
-                                .sendEmail(_EmailController.text);
-                            timer = Timer.periodic(const Duration(seconds: 1),
-                                (Timer t) => checkverification());
-                            setState(() {
-                              checkLogin = false;
-                            });
-                            showDailog(
-                                context,
-                                "  الرجاء تاكيد الاميل المرسل علي " +
-                                    _EmailController.text);
-                          } else {
-                            setState(() {
-                              checkLogin = false;
-                            });
-                            Fluttertoast.showToast(
-                                msg:
-                                    "This is already exist ,please choose another one",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.BOTTOM,
-                                timeInSecForIosWeb: 2,
-                                fontSize: 16.0);
-                          }
-                        } catch (e) {
-                          setState(() {
-                            _authMode = AuthMode.SignUp;
-                            checkLogin = false;
-                          });
-                          showDailog1(context, "$e");
-                        }
-                      } else {
-                        try {
-                          bool val =
-                              await Provider.of<Auth>(context, listen: false)
-                                  .LogIn(_EmailController.text,
-                                      _PasswordController.text, value);
-                          if (val) {
-                            setState(() {
-                              checkLogin = false;
-                            });
-                            Provider.of<AppStateManager>(context, listen: false)
-                                .setLogIn();
-                          }
-                        } catch (e) {
-                          setState(() {
-                            checkLogin = false;
-                          });
-                          showDailog1(context, "$e");
-                        }
-                      }
-                    }
-                  },
-                  child: Container(
-                    height: size.height / 16,
-                    width: size.width * 0.8,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: Offset(1, 1),
-                            blurRadius: 2,
-                            color: Colors.grey,
-                            spreadRadius: 1,
-                          ),
-                          BoxShadow(
-                            offset: Offset(-1, -1),
-                            blurRadius: 2,
-                            color: Colors.grey,
-                            spreadRadius: 1,
-                          )
-                        ]),
-                    child: Center(
-                      child: Text(
-                        _authMode != AuthMode.SignUp
-                            ? "تسجيل الدخول"
-                            : "إنشاء الحساب ",
-                        style: Theme.of(context).textTheme.headline2,
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: size.height * 0.02,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextButton(
-                        onPressed: () {
+                    SizedBox(
+                      height: size.height * 0.01,
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        if (_formKey.currentState!.validate() && errors.isEmpty) {
                           setState(() {
-                            errors.clear();
-                            if (_authMode == AuthMode.SignUp) {
-                              _authMode = AuthMode.SignIn;
-                            } else {
-                              _authMode = AuthMode.SignUp;
-                            }
+                            checkLogin = true;
                           });
-                        },
-                        child: Text(
-                            _authMode == AuthMode.SignUp
-                                ? " .تسجيل الدخول"
-                                : "!انشاء حساب",
-                            style: TextStyle(
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontSize: 15))),
-                    TextButton(
-                        onPressed: () async {
                           if (_authMode == AuthMode.SignUp) {
-                            setState(() {
-                              _authMode = AuthMode.SignIn;
-                            });
-                          } else {
-                            if (_formKey.currentState!.validate() &&
-                                errors.isEmpty) {
-                              try {
-                                bool val = await Provider.of<Auth>(context,
-                                        listen: false)
-                                    .checkIfEmailInUse(_EmailController.text);
-                                if (val) {
-                                  Provider.of<Auth>(context, listen: false)
-                                      .setUserInfo({
-                                    'email': _EmailController.text,
-                                    'password': _PasswordController.text,
-                                  });
-                                  Provider.of<AppStateManager>(context,
-                                          listen: false)
-                                      .setforgetpass(true);
-                                } else {
-                                  snackBar(context, "الاميل غير صحيح",
-                                      size.width * 0.3);
-                                }
-                              } catch (e) {
-                                snackBar(context, "$e", size.width * 0.3);
+                            try {
+                              bool val =
+                                  await Provider.of<Auth>(context, listen: false)
+                                      .checkIfEmailInUse(_EmailController.text);
+                              if (!val) {
+                                await Provider.of<Auth>(context, listen: false)
+                                    .sendEmail(_EmailController.text);
+                                timer = Timer.periodic(const Duration(seconds: 1),
+                                    (Timer t) => checkverification());
+                                setState(() {
+                                  checkLogin = false;
+                                });
+                                showDailog(
+                                    context,
+                                    "  الرجاء تاكيد الاميل المرسل علي " +
+                                        _EmailController.text);
+                              } else {
+                                setState(() {
+                                  checkLogin = false;
+                                });
+                                Fluttertoast.showToast(
+                                    msg:
+                                        "This is already exist ,please choose another one",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    timeInSecForIosWeb: 2,
+                                    fontSize: 16.0);
                               }
+                            } catch (e) {
+                              setState(() {
+                                _authMode = AuthMode.SignUp;
+                                checkLogin = false;
+                              });
+                              showDailog1(context, "$e");
+                            }
+                          } else {
+                            try {
+                              bool val =
+                                  await Provider.of<Auth>(context, listen: false)
+                                      .LogIn(_EmailController.text,
+                                          _PasswordController.text, value);
+                              if (val) {
+                                setState(() {
+                                  checkLogin = false;
+                                });
+                                Provider.of<AppStateManager>(context, listen: false)
+                                    .setLogIn();
+                              }
+                            } catch (e) {
+                              setState(() {
+                                checkLogin = false;
+                              });
+                              showDailog1(context, "$e");
                             }
                           }
-                        },
-                        child: Text(
-                            _authMode == AuthMode.SignUp
-                                ? " لديك حساب بالفعل؟"
-                                : "اعادة تعين كلمة المرور ؟",
-                            style: TextStyle(
-                                color: Theme.of(context).colorScheme.secondary,
-                                fontSize: 15))),
+                        }
+                      },
+                      child: Container(
+                        height: size.height / 16,
+                        width: size.width * 0.8,
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            borderRadius: BorderRadius.circular(15),
+                         ),
+                        child: Center(
+                          child: Text(
+                            _authMode != AuthMode.SignUp
+                                ? "تسجيل الدخول"
+                                : "إنشاء الحساب ",
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              setState(() {
+                                errors.clear();
+                                if (_authMode == AuthMode.SignUp) {
+                                  _authMode = AuthMode.SignIn;
+                                } else {
+                                  _authMode = AuthMode.SignUp;
+                                }
+                              });
+                            },
+                            child: Text(
+                                _authMode == AuthMode.SignUp
+                                    ? " .تسجيل الدخول"
+                                    : "!انشاء حساب",
+                                style: TextStyle(
+                                    color: Theme.of(context).colorScheme.secondary,
+                                    fontSize: 15))),
+                        TextButton(
+                            onPressed: () async {
+                              if (_authMode == AuthMode.SignUp) {
+                                setState(() {
+                                  _authMode = AuthMode.SignIn;
+                                });
+                              } else {
+                                if (_formKey.currentState!.validate() &&
+                                    errors.isEmpty) {
+                                  try {
+                                    bool val = await Provider.of<Auth>(context,
+                                            listen: false)
+                                        .checkIfEmailInUse(_EmailController.text);
+                                    if (val) {
+                                      Provider.of<Auth>(context, listen: false)
+                                          .setUserInfo({
+                                        'email': _EmailController.text,
+                                        'password': _PasswordController.text,
+                                      });
+                                      Provider.of<AppStateManager>(context,
+                                              listen: false)
+                                          .setforgetpass(true);
+                                    } else {
+                                      snackBar(context, "الاميل غير صحيح",
+                                          size.width * 0.3);
+                                    }
+                                  } catch (e) {
+                                    snackBar(context, "$e", size.width * 0.3);
+                                  }
+                                }
+                              }
+                            },
+                            child: Text(
+                                _authMode == AuthMode.SignUp
+                                    ? " لديك حساب بالفعل؟"
+                                    : "اعادة تعين كلمة المرور ؟",
+                                style: TextStyle(
+                                    color: Theme.of(context).colorScheme.secondary,
+                                    fontSize: 15))),
+                      ],
+                    )
                   ],
-                )
-              ],
-            ),
-          ),
-        )
-      ],
+                ),
+              ),
+           ),
+          )
+        ],
+      ),
     );
   }
 }

@@ -82,18 +82,6 @@ class _SplashScreenState extends State<SplashScreen> {
                         decoration: BoxDecoration(
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                            BoxShadow(
-                            offset: Offset(1, 1),
-                            blurRadius: 2,
-                            color: Theme.of(context).colorScheme.secondary,
-                            spreadRadius: 1,),
-                            BoxShadow(
-                              offset: Offset(-1, -1),
-                              blurRadius: 2,
-                              color: Theme.of(context).colorScheme.secondary,
-                              spreadRadius: 1,)
-                          ]
                         ),
                         child: Center(child: Text("جمله",style: Theme.of(context).textTheme.headline1,)),
                       ),

@@ -25,7 +25,7 @@ class _ItemSectionState extends State<ItemSection> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.3,
+      height: size.height * 0.28,
       child: ListView.separated(
         separatorBuilder: (ctx, index) {
           return SizedBox(
