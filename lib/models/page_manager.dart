@@ -9,7 +9,9 @@ class PageStateManager extends ChangeNotifier {
   bool _notification_screen = false;
   bool _scetion_screen = false;
   bool _item_detial_screen = false;
+  bool  _category_screen =false;
   bool _contactus_screen = false;
+  bool get category_screen => _category_screen;
   bool _edit_screen = false;
   bool get favorite_screen => _favorite_screen;
   bool get edit_screen => _edit_screen;
@@ -25,6 +27,7 @@ class PageStateManager extends ChangeNotifier {
     _favorite_screen = false;
     _profile_screen = false;
     _notification_screen = false;
+    _category_screen = false;
     _scetion_screen = false;
     _item_detial_screen = false;
      _contactus_screen = false;
@@ -51,6 +54,10 @@ class PageStateManager extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setcategory(bool val) {
+    _category_screen = val;
+    notifyListeners();
+  }
   void setcontact(bool val) {
     _contactus_screen = val;
     notifyListeners();

@@ -291,7 +291,7 @@ class _SignFormState extends State<SignForm> {
                               ),
                             ),
                             SizedBox(
-                              height: size.height * 0.02,
+                              height: size.height * 0.01,
                             ),
                             Card(
                               elevation: 2,
@@ -359,7 +359,7 @@ class _SignFormState extends State<SignForm> {
                             ),
                             if (_authMode == AuthMode.SignUp)
                               SizedBox(
-                                height: size.height * 0.02,
+                                height: size.height * 0.01,
                               ),
                             if (_authMode == AuthMode.SignUp)
                               Card(
@@ -424,7 +424,7 @@ class _SignFormState extends State<SignForm> {
                               ),
                             if (_authMode == AuthMode.SignUp)
                               SizedBox(
-                                height: size.height * 0.02,
+                                height: size.height * 0.01,
                               ),
                             if (_authMode == AuthMode.SignUp)
                               Card(
@@ -472,7 +472,7 @@ class _SignFormState extends State<SignForm> {
                               ),
                             if (_authMode == AuthMode.SignUp)
                               SizedBox(
-                                height: size.height * 0.02,
+                                height: size.height * 0.01,
                               ),
                             if (_authMode == AuthMode.SignUp)
                               Card(
@@ -519,7 +519,7 @@ class _SignFormState extends State<SignForm> {
                                 ),
                               ),
                             SizedBox(
-                              height: size.height * 0.02,
+                              height: size.height * 0.01,
                             ),
                             errors.isEmpty
                                 ? Container()
@@ -652,7 +652,7 @@ class _SignFormState extends State<SignForm> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 0.02,
+                      height: size.height * 0.01,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

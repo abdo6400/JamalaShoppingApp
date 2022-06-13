@@ -41,6 +41,7 @@ class AppRouter extends RouterDelegate
         if(appStateManager!.restpassword) RestpasswordScreen.page(),
         if(appStateManager!.succeedsign) SucceedSignScreen.page(),
         if(appStateManager!.logIn) HomeScreen.page(),
+        if(pageStateManager!.category_screen) CategoryScreen.page(),
         if(pageStateManager!.carte_screen) CartScreen.page(),
         if(pageStateManager!.favorite_screen) FavoriteScreen.page(),
         if(pageStateManager!.order_screen) OrderScreen.page(),
@@ -69,6 +70,7 @@ class AppRouter extends RouterDelegate
     if(route.settings.name == jamalapages.succeedsignPage) appStateManager!.setsucceedsign(false);
     if(route.settings.name == jamalapages.restpasswordPage) appStateManager!.setrestpassword(false);
     if(route.settings.name == jamalapages.homePage) return false;
+    if(route.settings.name == jamalapages.categoryPage) pageStateManager!.setcategory(false);
     if(route.settings.name == jamalapages.CartePage) pageStateManager!.setcart(false);
     if(route.settings.name == jamalapages.orderPage) pageStateManager!.setorder(false);
     if(route.settings.name == jamalapages.orderdetailPage) orderStateManager!.setOrderdetail(false);

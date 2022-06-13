@@ -26,19 +26,6 @@ class _CartScreenState extends State<CartScreen> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   title: Text('عربة التسوق'),
-      //   centerTitle: true,
-      //   actions: [
-      //     IconButton(
-      //         onPressed: () {
-      //           Provider.of<PageStateManager>(context, listen: false)
-      //               .setorder(true);
-      //         },
-      //         icon: Icon(Icons.list_alt_outlined))
-      //   ],
-      // ),
       body: i == 0
           ?
       CartListView():EmptyCartScreen(),

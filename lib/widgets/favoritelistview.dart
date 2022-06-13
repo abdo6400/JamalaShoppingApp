@@ -26,7 +26,7 @@ class _FavoriteListViewState extends State<FavoriteListView> {
       height: size.height,
       width: size.width,
       child:GridView.builder(
-        itemCount: 3,
+        itemCount: products.length,
           controller: ScrollController(),
           padding: EdgeInsets.all(15),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(

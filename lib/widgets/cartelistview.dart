@@ -65,11 +65,29 @@ class CartListView extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Container(
-        height: size.height*0.9,
+        height: size.height*0.84,
         width: size.width,
-        child: Column(
+        child: Stack(
           children: [
-            SizedBox(
+           Container(
+             height: size.height*0.8,
+                width: size.width,
+                padding: EdgeInsets.only(top: size.height*0.01,right: size.width*0.03,left: size.width*0.03,),
+                child: ListView.separated(
+                  itemCount: 9,
+                  itemBuilder: (ctx,index){
+                    return CartItem(index:index+1);
+                  },
+                  separatorBuilder: (ctx,index){
+                    return SizedBox(
+                      height: size.height*0.01,
+                    );
+                  },
+                ),
+              ),
+            Positioned(
+              bottom: 0,
+              child:   SizedBox(
               width: size.width,
               child: ElevatedButton(
 
@@ -86,23 +104,7 @@ class CartListView extends StatelessWidget {
                   }
               ),
             ),
-            Expanded(
-              child: Container(
-                width: size.width,
-                padding: EdgeInsets.only(top: size.height*0.01,right: size.width*0.03,left: size.width*0.03,),
-                child: ListView.separated(
-                  itemCount: 9,
-                  itemBuilder: (ctx,index){
-                    return CartItem(index:index+1);
-                  },
-                  separatorBuilder: (ctx,index){
-                    return SizedBox(
-                      height: size.height*0.01,
-                    );
-                  },
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),

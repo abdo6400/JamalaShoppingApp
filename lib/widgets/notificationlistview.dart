@@ -21,7 +21,7 @@ class NotifiactionListView extends StatelessWidget {
           },
           itemCount: 10,
           separatorBuilder: (ctx, index) {
-            return Spacer();
+            return SizedBox();
           },
         ));
   }

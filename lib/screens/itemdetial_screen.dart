@@ -58,11 +58,11 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                                 .setsection(false);
                             Provider.of<PageStateManager>(context,
                                     listen: false)
-                                .setcart(true);
+                                .setfavorite(true);
                             Navigator.of(context).pop();
                           },
                           icon: Icon(
-                            Icons.shopping_cart_outlined,
+                            Icons.favorite,
                           ))
                     ],
                   ),

@@ -253,7 +253,9 @@ class _MainScreenState extends State<MainScreen> {
                                     textAlign: TextAlign.center,
                                   ),
                                   TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Provider.of<PageStateManager>(context,listen: false).setcategory(true);
+                                      },
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceEvenly,

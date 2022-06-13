@@ -19,36 +19,18 @@ class CategoryScreenState extends State<CategoryScreen>{
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return  Scaffold(
-      body: Column(
-          children: [
-            Container(
-              height: size.height * 0.06,
-              width: size.width,
-              child: Card(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width*0.02),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "الاقسام",
-                      ),
-                      SizedBox(
-                        width: size.width * 0.03,
-                      ),
-                      Icon(
-                        Icons.widgets_outlined,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(child: Directionality(
-              textDirection: TextDirection.rtl,
-                child: SectionsGridView()))
-          ],
+    return  SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Categories"),
+        ),
+        body: Column(
+            children: [
+              SizedBox(child: Directionality(
+                textDirection: TextDirection.rtl,
+                  child: SectionsGridView()))
+            ],
+        ),
       ),
     );
   }

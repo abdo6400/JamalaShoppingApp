@@ -11,28 +11,28 @@ class progressDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
         width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height*0.8,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
         ),
         child:  Column(
-           mainAxisAlignment: MainAxisAlignment.center,
+             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SpinKitFadingCube(
-                size: 40.0,
-                itemBuilder: (BuildContext context, int index) {
-                  return DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: index.isEven ? Colors.blueAccent :Colors.grey,
-                    ),
-                  );
-                },
+               SpinKitFadingCube(
+                  size: 40.0,
+                  itemBuilder: (BuildContext context, int index) {
+                    return DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: index.isEven ? Colors.blueAccent :Colors.grey,
+                      ),
+                    );
+                  },
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height*0.05,
               ),
-              Text(mssage!
-              )
+              Text(mssage!)
             ],
           ),
     );

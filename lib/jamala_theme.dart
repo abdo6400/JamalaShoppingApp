@@ -38,14 +38,14 @@ class JamalaTheme {
     return ThemeData(
       brightness: Brightness.light,
       backgroundColor: Colors.grey.shade500,
-      primaryColor:  Color.fromRGBO(36,47 ,155 , 1),
+      primaryColor:  Colors.amber,
       textSelectionTheme: const TextSelectionThemeData(
         selectionColor: Colors.black,
       ),
       textTheme: lightTextTheme,
       appBarTheme: AppBarTheme(
-         backgroundColor:  Colors.white,
-          //titleTextStyle: lightTextTheme.headline3,
+         backgroundColor:  Colors.amber,
+          titleTextStyle: lightTextTheme.headline3,
         centerTitle: true,
         elevation: 2.0
       ),
@@ -60,10 +60,11 @@ class JamalaTheme {
         ),
         backgroundColor: Color.fromRGBO(36,47 ,155 , 1),
       ),
-      // drawerTheme: DrawerThemeData(
-      //   backgroundColor: Color.fromRGBO(155,163 ,235 , 1)
-      // ),
-      colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Color.fromRGBO(100, 111, 212, 1),primary:  Color.fromRGBO(219, 223, 253, 1)),
+      drawerTheme: DrawerThemeData(
+        backgroundColor: Colors.amber,
+        scrimColor: Colors.black12
+      ),
+      colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Color.fromRGBO(100, 111, 212, 1),primary:  Color.fromRGBO(36,47 ,155 , 1)),
     );
   }
   static ThemeData Dark() {
